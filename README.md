@@ -7,9 +7,9 @@ and Inkscape.
 
 ### Lab Topics
 
-+ [ ] Lab 1 - Creating a Colorful Map of the United States of America
-+ [ ] Lab 2 - Exploring Coordinate Systems and Map Projections
-+ [ ] Lab 3 - Map Elements and Design
++ [x] Lab 1 - Creating a Colorful Map of the United States of America
++ [x] Lab 2 - Exploring Coordinate Systems and Map Projections
++ [x] Lab 3 - Map Elements and Design
 + [ ] Lab 4 - IDP and Refugee Proportional Symbol Map
 + [ ] Lab 5 - IDP and Refugee Proportional Symbol Map - Designing the Final Map
 + [ ] Lab 6 - Countries with Refugees and Internally Displaced Persons Over 1 Million Map Design
