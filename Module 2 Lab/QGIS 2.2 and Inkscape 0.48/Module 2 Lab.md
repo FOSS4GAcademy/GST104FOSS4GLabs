@@ -78,7 +78,7 @@ The circles will be used in this exercise for illustrating the areal and shape d
 
 First we’ll examine the map units and distance units set for this “unprojected” map.
 
-4.	From the menu bar, select ProjectProject Properties.
+4.	From the menu bar, select Project->Project Properties.
 5.	Click the CRS tab to view the Coordinate Reference System information for the project file.
 
 Notice that the selected coordinate system is set to WGS 84, which is an unprojected coordinate system.
@@ -101,7 +101,7 @@ The measured distance is about 25,100 kilometers (your distance may vary slightl
 
 Let’s tell QGIS that we are, in fact, working with a World-based coordinate system and wish to measure on a round world.
 
-10.	From the menu bar, select ProjectProject Properties.
+10.	From the menu bar, select Project->Project Properties.
 11.	Click on the CRS tab.
 12.	Check the “Enable ‘on the fly’ CRS transformation” option.
 13.	Select the WGS 84 coordinate system from the list of Coordinate reference systems of the world.
@@ -165,7 +165,7 @@ Projections suitable for mapping the world are not necessarily the best for mapp
 
 In this task, we will look at a map of the contiguous United States using a few different projections. 
 
-1.	In QGIS Desktop, open the project, Country View.qgs by clicking ProjectOpen.
+1.	In QGIS Desktop, open the project, Country View.qgs by clicking Project->Open.
 
 ![Country View.qgs](figures/Country_View.qgs.png "Country View.qgs")
 
@@ -177,7 +177,7 @@ The distance property is more difficult to judge.  The known distance between Lo
 
 The distance in the “unprojected” view returns an answer 44.6 meters!  The map is obviously not returning the correct distance.  Once again we will need to enable on-the-fly CRS transformation so the correct distance will be returned. 
 
-3.	From the menu bar, select Project Project Properties.
+3.	From the menu bar, select Project ->Project Properties.
 4.	Click on the CRS tab.
 5.	Check the “Enable ‘on the fly’ CRS transformation” option.
 6.	Select the WGS 84 coordinate system from the list of Coordinate reference systems of the world.
@@ -250,7 +250,7 @@ Not too much changed between Albers and Lambert.  They are both similar map proj
 31.	Select USA_Contiguous_Lambert_Conformal_Conic from the recently used list.  Make sure that the CRS parameters show at the bottom of the selector.  If not, temporarily select a different CRS, then select USA_Contiguous_Lambert_Conformal_Conic again.
 32.	Click OK to copy the parameters.
 33.	Change the Name to Modified_USA_Contiguous_Lambert_Conformal_Conic.  Your Custom CRS Parameters should look like Figure 15.
-34.	Click on ProjectProperties and change the map projection to the newly created Modified_USA_Contiguous_Lambert_Conformal_Conic
+34.	Click on Project->Properties and change the map projection to the newly created Modified_USA_Contiguous_Lambert_Conformal_Conic
 
 ![Copied Parameters for our Custom Lambert CRS](figures/Copied_Parameters_for_our_Custom_Lambert_CRS.png "Copied Parameters for our Custom Lambert CRS")
 
@@ -339,7 +339,7 @@ So far, Vermont looks the same, but you will find out why soon.  First, let’s 
 
 6.	Open the Project Properties, select the CRS tab.
 
-Notice that on the fly CRS transformation is enabled (remember, it was not enabled before) and WGS 84 is the projects current CRS.  This happened because QGIS realized that layers in the project had different CRS.  With on the fly CRS transformation enabled, the two Vermont layers still display on top of each other.  If on the fly CRS transformation was not enabled, the two Vermont layers would not display on top of each other or, even, on the same map at all!  If you wish to modify the behavior of QGIS and its automatic management of on the fly CRS transformations, you can set the behavior options by clicking SettingsOptionsCRS tab from the main QGIS menu bar.
+Notice that on the fly CRS transformation is enabled (remember, it was not enabled before) and WGS 84 is the projects current CRS.  This happened because QGIS realized that layers in the project had different CRS.  With on the fly CRS transformation enabled, the two Vermont layers still display on top of each other.  If on the fly CRS transformation was not enabled, the two Vermont layers would not display on top of each other or, even, on the same map at all!  If you wish to modify the behavior of QGIS and its automatic management of on the fly CRS transformations, you can set the behavior options by clicking Settings->Options->CRS tab from the main QGIS menu bar.
 
 Let us now change the project CRS to match our SPCS Vermont shapefile.  First, we will set the style of the SPCS Vermont to match the WGS 84 Vermont.
 
@@ -402,7 +402,7 @@ The Universal Transverse Mercator (UTM) grid (shown below) is a plane coordinate
 1.	There are separate versions of both the Country View and World View maps with a UTM Zone polygon theme. In each QGIS map document the UTM theme is labeled with the UTM zones so you can see what zones cover your part of the country. 
 2.	These QGIS map documents are called World View UTM.qgs.and Country View UTM.qgs
 3.	Using what you have learned in this lab, experiment with the putting these UTM World and Country View maps into the UTM system.
-4.	Open up one of these projects. (for example: Open QGIS 2.2  Project  Open  Country View UTM.qgs)
+4.	Open up one of these projects. (for example: Open QGIS 2.2 -> Project -> Open -> Country View UTM.qgs)
 5.	Once the map opens, from the Project menu choose Project Properties and open the CRS tab. 
 6.	Via the Filter search for UTM. Choose a UTM zone in your part of the country to put the map into. There are UTM definitions with different datums. Choose one from the NAD83 UTM zone projection series. 
 

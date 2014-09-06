@@ -99,7 +99,7 @@ These properties set the map’s origin to 0,0, which is the top-left corner of 
 With the map composed how we like it, we will now prepare for it for exporting to PDF format.  PDF format is preferred for exporting vector data as the format preserves the vector data and does not rasterize it.  This allows for vector editing without loss of quality of the data.  To prepare for export, we will set the export resolution, and set the backgrounds as transparent.
 
 12.	Click ‘Composition’ tab in the Information Panels.  Set the following options:
-	+ Page Background: ChangeTransparency: 100%
+	+ Page Background: Change->Transparency: 100%
 	+ Export Resolution: 300 dpi
 13.	Select the map, then click ‘Item properties’ tab in the Information Panels.  Set the following options:
 	+ Background: unchecked
@@ -189,7 +189,7 @@ We will design a colorful map of the USA in Inkscape that will be composed on an
 
 Now let’s import our PDF maps.
 
-4.	Click FileImport… or the Import button on the commands bar ![Import button](figures/Import_button.png "Import button") .  This will open the Import dialog.
+4.	Click File->Import… or the Import button on the commands bar ![Import button](figures/Import_button.png "Import button") .  This will open the Import dialog.
 5.	Choose ‘Lower 48 States.pdf’ from your lab directory.  Click Open.  This will open the PDF Import Settings dialog.
 6.	Click OK to import the PDF as a new layer in the Inscape document.
 7.	You should now have your Lower 48 map displayed in Inkscape.  Take a moment to use the Select tool ![Select tool](figures/Select_tool.png "Select tool") to center the map on the page. 
@@ -217,7 +217,7 @@ With the Lower 48 imported, we will now import Hawaii and Alaska in to Inkscape.
 (b)
 ![Layers Panel Status Bar](figures/Layers_Panel_Status_Bar.png "Layers Panel Status Bar")
 
-18.	Click FileImport… or the Import button on the commands bar  .  This will open the Import dialog.  
+18.	Click File->Import… or the Import button on the commands bar  .  This will open the Import dialog.  
 19.	Choose ‘Hawaii.pdf’ from your lab directory.  Click Open.  This will open the PDF Import Settings dialog.
 20.	Click OK to import the PDF as a new layer in the Inscape document.  You will see Hawaii displayed on the Inkscape document.
 	+ If the Lower 48 is obscured by a white background box in the Hawaii layer, remove the Hawaii layer, and re-visit steps 12-15 in Task 1 to re-export the Hawaii layer with a transparent background.
@@ -233,7 +233,7 @@ With the Lower 48 imported, we will now import Hawaii and Alaska in to Inkscape.
 
 ![Roughed In Map Design](figures/Roughed-In_Map_Design.png "Roughed In Map Design")
 
-24.	Take a moment to save your work in your lab directory.  Click FileSave and name your document ‘Colorful Map of the USA’ in the ‘Inscape SVG (*.svg) format.
+24.	Take a moment to save your work in your lab directory.  Click File->Save and name your document ‘Colorful Map of the USA’ in the ‘Inscape SVG (*.svg) format.
 25.	Click Save to save the document.
 
 ###Task 4 Designing the Final Map Layout
@@ -290,7 +290,7 @@ Now let’s turn our attention to the labels for Alaska and Hawaii.  They are qu
 27.	With Alaska still the active layer, click Create and edit text objects tool ![Create and edit text objects](figures/Create_and_edit_text_objects.png "Create and edit text objects")  on the toolbox, then click above the LA label.  This will create a new text object.
 28.	Type LA.  LA will appear on the composition.  
 29.	Use the Select tool to select the newly created text. 
-30.	Click TextText and Font on the menu bar to open the Text and Font dialog.  
+30.	Click Text->Text and Font on the menu bar to open the Text and Font dialog.  
 31.	Select Arial for the font family.  Arial is the font we used to label the states in QGIS (I went back and checked, you can too!), so we are matching the font in Inkscape.
 32.	Click Apply then Close to set the font to Arial.
 33.	Ungroup the LA label from the ellipse.
@@ -305,7 +305,7 @@ Now let’s turn our attention to the labels for Alaska and Hawaii.  They are qu
  ![Text and Paths Labels Sharing the Same Origin](figures/Text_and_Paths_Labels_Sharing_the_Same_Origin.png "Text and Paths Labels Sharing the Same Origin")
 
 38.	Select the LA text (larger one), hold down the Control key on your keyboard, and use the top-right resize arrows to make the larger text the same size as the smaller text.  Holding down the Control key maintains the aspect ratio of the resizing object.
-39.	Re-open the Text and Font dialog (TextText and Font) and notice that the Font size is right around 18. Now we know which font size we are working with.
+39.	Re-open the Text and Font dialog (Text->Text and Font) and notice that the Font size is right around 18. Now we know which font size we are working with.
 40.	Set the Font size to 18.  
 41.	Click the Text tab and then change the text to AK.
 42.	Click Apply then Close to close the Text and Font dialog.
@@ -336,9 +336,9 @@ Now let’s try a second method to resize Hawaii’s label that is much quicker,
 51.	Zoom in close to Hawaii.  Select then ungroup Hawaii multiple times until you see the selection boxes around the label and ellipse.
 52.	Select and group the HI label and ellipse.
 53.	Zoom to the IN (Indiana) label and select the label and ellipse.
-54.	Click EditCopy from the menu bar.
+54.	Click Edit->Copy from the menu bar.
 55.	Zoom back to the HI label and select it.
-56.	Click EditPaste SizePaste Size from the menu bar.  Violà!  The Hawaii label is now the same size as the Indiana label.  Let’s discuss the downsides to doing this for a moment.  First, we chose IN label because it was roughly the same shape and character width as HI, therefore, when it is scaled, the font size should be very close and the label should not be stretched unusually.  Had we chosen CA, for instance, you would notice the stretching of the HI label.  The previous (long) method is a safer choice, however, this method will work in a pinch, but please check for consistency between like items (labels in this case) when you use this method.
+56.	Click Edit->Paste Size->Paste Size from the menu bar.  Violà!  The Hawaii label is now the same size as the Indiana label.  Let’s discuss the downsides to doing this for a moment.  First, we chose IN label because it was roughly the same shape and character width as HI, therefore, when it is scaled, the font size should be very close and the label should not be stretched unusually.  Had we chosen CA, for instance, you would notice the stretching of the HI label.  The previous (long) method is a safer choice, however, this method will work in a pinch, but please check for consistency between like items (labels in this case) when you use this method.
 57.	Move the HI label to a reasonable location on Hawaii.  Your map should look similar to the figure below at this point.
 
 ![Our_Map_with_Fixed_Labels](figures/Our_Map_with_Fixed_Labels.png "Our_Map_with_Fixed_Labels")
@@ -465,5 +465,5 @@ In this lab, you have learned how to use Inkscape to import PDFs, modify objects
 ### 6 Discussion Questions
 
 1.	Submit your exported colorful map of the USA for grading.
-2.	In Inkscape, click FileDocument PropertiesSnap tab.  Set the Snap to objects Snap distance to 50 then close the Document Properties.  Zoom in close to a neatline.  Click the Draw Bezier curves and straight lines tool.  Click just outstide the neatline.  Notice that the path snapped to the center of the path!  Now, explore the Snap Controls bar and discuss what snapping is, and identify two places in this lab where snapping would have come in useful.
-3.	Let’s add a little more pizazz to our map. Inkscape has a huge library of Filters that can do interesting things to our map.  Your challenge is to apply a drop shadow to the map using the filter located at: FiltersShadows and GlowsDrop Shadow…  Add a drop shadow the the Lower 48, Alaska, and Hawaii.  It may be useful to group everything on each of the three layers first, then apply the drop shadow to the selected group.  To easily select everything in a layer, lock all other layers, then drag a large selection box around the objects to select.  Export a PDF and submit the map with a  drop shadow for grading.  Your map may look similar to the one below.
+2.	In Inkscape, click File->Document Properties->Snap tab.  Set the Snap to objects Snap distance to 50 then close the Document Properties.  Zoom in close to a neatline.  Click the Draw Bezier curves and straight lines tool.  Click just outstide the neatline.  Notice that the path snapped to the center of the path!  Now, explore the Snap Controls bar and discuss what snapping is, and identify two places in this lab where snapping would have come in useful.
+3.	Let’s add a little more pizazz to our map. Inkscape has a huge library of Filters that can do interesting things to our map.  Your challenge is to apply a drop shadow to the map using the filter located at: Filters->Shadows and Glows->Drop Shadow…  Add a drop shadow the the Lower 48, Alaska, and Hawaii.  It may be useful to group everything on each of the three layers first, then apply the drop shadow to the selected group.  To easily select everything in a layer, lock all other layers, then drag a large selection box around the objects to select.  Export a PDF and submit the map with a  drop shadow for grading.  Your map may look similar to the one below.
