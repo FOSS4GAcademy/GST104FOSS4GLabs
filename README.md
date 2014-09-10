@@ -12,8 +12,8 @@ and Inkscape.
 + [x] Lab 3 - Map Elements and Design
 + [x] Lab 4 - IDP and Refugee Proportional Symbol Map
 + [x] Lab 5 - IDP and Refugee Proportional Symbol Map - Designing the Final Map
-+ [ ] Lab 6 - Countries with Refugees and Internally Displaced Persons Over 1 Million Map Design
-+ [ ] Lab 7 - Design and Label a Downtown Street Map
++ [x] Lab 6 - Countries with Refugees and Internally Displaced Persons Over 1 Million Map Design
++ [x] Lab 7 - Design and Label a Downtown Street Map
 
 *Labs with a checkmark are completely converted to Markdown*
 
