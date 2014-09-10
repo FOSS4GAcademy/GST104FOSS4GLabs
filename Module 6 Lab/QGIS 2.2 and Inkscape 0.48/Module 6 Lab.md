@@ -212,7 +212,7 @@ With all of the symbology now set, your map should look like the figure below.
 
 With the map design complete, let’s create a legend then export the map in to Inkscape.
 
-1.	Click ProjectNew Print Composer and name it ‘Worldwide IDPs and Refugees’.
+1.	Click Project->New Print Composer and name it ‘Worldwide IDPs and Refugees’.
 2.	In the Composition Panel, under the Composition tab, set the following properties:
 	+ Paper and quality
 		+ Presets: ANSI A (Letter; 8.5x11 in)
