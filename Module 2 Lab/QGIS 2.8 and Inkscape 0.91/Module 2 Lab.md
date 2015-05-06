@@ -2,7 +2,7 @@
 ## Lab 2: Exploring Coordinate Systems and Map Projections
 ### Objective – Explore and Understand Coordinate Systems and Map Projections
 
-Document Version: 9/2/2014
+Document Version: 4/28/2015
 
 **FOSS4G Lab Author:**
 Richard Smith, Ph.D., GISP

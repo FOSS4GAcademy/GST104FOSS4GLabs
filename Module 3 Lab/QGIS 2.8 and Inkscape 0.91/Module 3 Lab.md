@@ -44,31 +44,31 @@ In this task, you will use the QGIS Print Composer to prepare and export the Low
 
 1. Open QGIS Desktop.
 2. Open the Lower 48 States.qgs QGIS project file that you created in Labs 1 and 2.
-3. Click Project->New Print Composer from the main file menu.
+3. Click Project | New Print Composer from the main file menu.
 4. Enter ‘Lower 48 States’ as the Composer title.
 5. Click OK.  This will set the title and open a new print composer window.
 
 Let’s take a moment to refresh our memories on the Print Composer.  The figure below identifies the components of the Print Composer.  Below are brief descriptions of the Print Composer components.
 
-+ Composition View: Displays the map composition.  
++ **Composition View**: Displays the map composition.  
 + Information Panels: A collection of panels that allow you to set the properties of the composition, any selected map element, and atlas generation.   
-+ Command History: A list of commands that you have performed on the composition.
-+ Composer Items: Commands that add , select, pan, and move map elements to the composition.
-+ Composer: Commands that save, create, print, and export the map composition.
-+ Paper Navigation: Tools to navigate around the virtual paper (on which you compose your map) in the Composition View.
-+ Composer Items Actions: Commands to group, lock, order, and align selected map elements.
-+ Atlas: Commands used to generate an atlas.  Will not be used in this lab.
++ **Command History**: A list of commands that you have performed on the composition.
++ **Composer Items**: Commands that add , select, pan, and move map elements to the composition.
++ **Composer**: Commands that save, create, print, and export the map composition.
++ **Paper Navigation**: Tools to navigate around the virtual paper (on which you compose your map) in the Composition View.
++ **Composer Items Actions**: Commands to group, lock, order, and align selected map elements.
++ **Atlas**: Commands used to generate an atlas.  Will not be used in this lab.
 
 ![Print Composer](figures/Print_Composer.png "Print Composer")
 
-Let’s use the Print Composer to create a map of the Lower 48 States and then export it for use in Inkscape later.  As we will be producing our final map on a 8.5x11 inch piece of paper, in landscape orientation, we will first set a few composition options, then add the map to the composition view.
+Let’s use the Print Composer to create a map of the Lower 48 States and then export it for use in Inkscape later.  As we will be producing our final map on a 8.5 x 11 inch piece of paper, in landscape orientation, we will first set a few composition options, then add the map to the composition view.
 
 6. Click ‘Composition’ tab in the Information Panels.  Set the following options:
 	+ Presets: ANSI A (Letter; 8.5 x 11 in)
 	+ Orientation: Landscape
-7.	Click ‘Add new map’ button on the Composer Items toolbar.  Drag a large box on the Composition View.  This will create a map view showing the Lower 48 States.
-8.	To maximize the size of the map, let’s set the position and size to use the entire 8.5x11 inches of the paper.  To do this, do the following:
-	+ Click ‘Select/Move item’ tool ![Print Composer](figures/Select_Move_item.png "Print Composer")  and select the map.  You should have one item selected.  You can check to see how many items are selected at the bottom of the composer window (Figure below).
+7. Click ‘Add new map’ button on the Composer Items toolbar.  Drag a large box on the Composition View.  This will create a map view showing the Lower 48 States.
+8. To maximize the size of the map, let’s set the position and size to use the entire 8.5x11 inches of the paper.  To do this, do the following:
+	+ Click ‘Select/Move item’ tool ![Print Composer](figures/Select_Move_item.png "Print Composer")  and select the map.  You should have one item selected.  You can check to see how many items are selected at the bottom of the composer window (shown in figure below).
 	+ Click ‘Item Properties’ tab in the Information Panels section of the Print Composer.
 	+ Expand ‘Position and size’ section.
 	+ Set the following properties:
@@ -77,12 +77,12 @@ Let’s use the Print Composer to create a map of the Lower 48 States and then e
 		+ Width:279.4
 		+ Height: 215.9
 
-![Selected Item Count](figures/Selected_Item_Count.png. "Selected Item Count")
+![Selected Item Count](figures/Selected_Item_Count.png "Selected Item Count")
 
 These properties set the map’s origin to 0,0, which is the top-left corner of the page.  The width and height are set in millimeters.  279.4mm and 215.9mm are 11in. and 8.5in. respectively, which is our page size.  By setting these values, we are maximizing the size of our map on the page.
 
-9. Let’s re-synchronize the extent with what we had set in QGIS.  Click ‘Item Properties’ tab in the Information Panels section of the Print Composer.  
-10. Click ‘Set to map canvas extent’.  This will set the map extent to match the extent we have set in the QGIS project.  
+9. Let’s re-synchronize the extent with what we had set in QGIS.  Click ‘Item Properties’ tab in the Information Panels section of the Print Composer.
+10. Click ‘Set to map canvas extent’.  This will set the map extent to match the extent we have set in the QGIS project.
 11. Now let’s set the scale to 18,000,000.  Still in the Item properties tab, set Scale to 18000000.
 	+ If your map is still not centered, either:
 		+ Change the map extent using the zoom and pan tools in QGIS
@@ -91,31 +91,33 @@ These properties set the map’s origin to 0,0, which is the top-left corner of 
 With the map composed how we like it, we will now prepare for it for exporting to PDF format.  PDF format is preferred for exporting vector data as the format preserves the vector data and does not rasterize it.  This allows for vector editing without loss of quality of the data.  To prepare for export, we will set the export resolution, and set the backgrounds as transparent.
 
 12. Click ‘Composition’ tab in the Information Panels.  Set the following options:
-	+ Page Background: Change->Transparency: 100%
+	+ Page Background: Change | Transparency: 100%
 	+ Export Resolution: 300 dpi
 13. Select the map, then click ‘Item properties’ tab in the Information Panels.  Set the following options:
 	+ Background: unchecked
-14. Click Composer->Export as PDF…
+14. Click Composer | Export as PDF…
 15. Save the PDF as ‘Lower 48 States.pdf’ in your lab folder.
 
 16. Using what you have learned in this Task, export Hawaii and Alaska as PDF files using similar settings as above.  For each export, set the scale to show the states as large as possible without showing any part of the Lower 48.
 
-###Task 2 Basics of Inkscape
+### Task 2 Basics of Inkscape
 
 This task will teach you the basics of Inkscape, an open source vector-editing program, that we will use to complete our map design.  The reason we are using Inkscape to complete the map design is because QGIS does not allow for multiple QGIS Project maps to be displayed on a single print composer (there is a work-around way to do this, but it is clunky and confusing).  Exporting maps for final composition in a graphics-editing program is a common workflow for cartographers and so we are not working outside of what would be considered a normal workflow.
 
-1. Open Inkscape. The figure below shows the interface, and the following text describes the sections of the Inkscape interface.
+1. Open Inkscape.
+
+The figure below shows the interface, and the following text describes the sections of the Inkscape interface.
 
 ![Inkscape Interface](figures/Inkscape_Interface.png "Inkscape Interface")
 
-+ Composition View: Displays the composition.  
-+ Menu Bar: Provides access to Inkscape’s capabilities.  Many of these capabilities are also provided in the other bars on the interface for faster access.  
-+ Tool Controls Bar: Contains tools to select, rotate, position, scale, and arrange objects and nodes in the composition.
-+ Toolbox: Tools that allow for selection, vertex editing, zooming, drawing, and text editing, among others.
-+ Commands  Bar: Provides quick access to open, save, print, import, export, copy/paste, and quick zoom commands.
-+ Snap Controls Bar: Provides quick access to a variety of snapping controls.  Will not be used in this lab.
-+ Palette: Quick access to colors.  Click to set a fill color, shift-click to set a stroke (line) color.
-+ Status Bar: Displays location of mouse cursor, selected colors, active layer, and layer visibility and locked status.
++ **Composition View**: Displays the composition.  
++ **Menu Bar**: Provides access to Inkscape’s capabilities.  Many of these capabilities are also provided in the other bars on the interface for faster access.  
++ **Tool Controls Bar**: Contains tools to select, rotate, position, scale, and arrange objects and nodes in the composition.
++ **Toolbox**: Tools that allow for selection, vertex editing, zooming, drawing, and text editing, among others.
++ **Commands Bar**: Provides quick access to open, save, print, import, export, copy/paste, and quick zoom commands.
++ **Snap Controls Bar**: Provides quick access to a variety of snapping controls.  Will not be used in this lab.
++ **Palette**: Quick access to colors.  Click to set a fill color, shift-click to set a stroke (line) color.
++ **Status Bar**: Displays location of mouse cursor, selected colors, active layer, and layer visibility and locked status.
 
 Any of the above bars may be shown or hidden by clicking View | Show/Hide.
 
@@ -152,13 +154,13 @@ In general, an Inkscape document contains multiple layers of objects.  Each obje
 
 Now that you have a brief overview of Inkscape’s layout, let’s get to work designing our map.
 
-###Task 3 Importing and Arranging Maps in Inkscape
+### Task 3 Importing and Arranging Maps in Inkscape
 
-We will design a colorful map of the USA in Inkscape that will be composed on an 11in. x 8.5in. piece of paper in landscape orientation.  To prepare for the design, we will first set a few document properties, and then import the three maps we exported in Task 1; each map will be imported to a separate layer.
+We will design a colorful map of the USA in Inkscape that will be composed on an 11 inch x 8.5 inch piece of paper in landscape orientation.  To prepare for the design, we will first set a few document properties, and then import the three maps we exported in Task 1; each map will be imported to a separate layer.
 
 1. In Inkscape, click File | Document Properties…
 2. Click the ‘Page’ tab and set the following properties:
-	+ Background: R: 255; G 255; B: 255; A: 0
+	+ Background color (click background color box): R: 255; G 255; B: 255; A: 0
 		+ This sets the background to fully transparent.
 	+ Page Size: US Letter  8.5 x 11.0 in
 	+ Orientation: Landscape
@@ -174,30 +176,30 @@ Now let’s import our PDF maps.
 7. You should now have your Lower 48 map displayed in Inkscape.  Take a moment to use the Select tool ![Select tool](figures/Select_tool.png "Select tool") to center the map on the page. 
 	+ Also note that every state is labeled!  This is great news as it saves us time from having to manually create the labels that appeared to be missing in QGIS.  The on-screen rendering in QGIS may differ from the exports, so always double-check.  In this case, it worked in our favor.
 
-8. Click View layers ![View Layers](figures/View_Layers.png "View Layers")  button to open the Layer panel.  Note that there is a single layer listed, ‘Layer 1’ (Figure below).
+8. Click View layers ![View Layers](figures/View_Layers.png "View Layers")  button to open the Layer panel. Alternatively, you can click Layer | Layers from the menu bar to open the Layer panel. Note that there is a single layer listed, ‘Layer 1’ (shown in figure below).
 
 ![Layers Panel with a Single Layer Listed](figures/Layers_Panel_with_a_Single_Layer_Listed.png "Layers Panel with a Single Layer Listed")
 
 9. Click the visibility toggle ![Visability toggle](figures/Visability_toggle.png "Visability toggle") .  The map will disappear.
 10. Click the visibility toggle ![Visability toggle 2](figures/Visability_toggle_2.png "Visability toggle 2") .  The map will re-appear.  Turning layers’ visibility on and off help de-clutter the document and makes it easier to focus on certain elements.
-11. Click ‘Layer 1’ text to make it editable.  Rename the layer ‘Lower 48 States’ then press Enter on your keyboard.  The layer is now distinctly named which will make it easier to reference it later.
+11. Double-click ‘Layer 1’ text to make it editable.  Rename the layer ‘Lower 48 States’ then press Enter on your keyboard.  The layer is now distinctly named which will make it easier to reference it later.
 12. Click the lock toggle ![lock toggle](figures/lock_toggle.png "lock toggle") .  This will lock the layer and prevent you from selecting or modifying the layer.  Try selecting the layer with the select tool.  You cannot.  This is very handy when you wish to prevent a layer from being accidentally modified.
 13. Click the lock toggle ![lock toggle 2](figures/lock_toggle_2.png "lock toggle 2") .  This will unlock the layer and allow selection and modification.
 
 With the Lower 48 imported, we will now import Hawaii and Alaska in to Inkscape.  Each map will be imported in to a separate layer so we can manipulate them separately.  
 14. In the Layers panel, click Create a new layer ![Create_a_new_layer](figures/Create_a_new_layer.png "Create_a_new_layer") .  This will open the Add Layer dialog.  
 15. Set the Layer name to ‘Hawaii’ and the Position to ‘Above current’.  
-16. Click OK to add the new layer.  
+16. Click Add to add the new layer.  
 17. Select the Hawaii layer in the Layers panel.  A selected layer will have a blue background and will also be displayed in the status bar at the bottom of the Inkscape program.  See the figure below for reference.  The selected layer will be the target layer for imported files, and for other reasons we are not concerned about right now.
 
 (a) ![Hawaii layer selected](figures/Hawaii_layer_selected.png "Hawaii layer selected")
 
 (b) ![Layers Panel Status Bar](figures/Layers_Panel_Status_Bar.png "Layers Panel Status Bar")
 
-18. Click File->Import… or the Import button on the commands bar  .  This will open the Import dialog.  
+18. Click File | Import… or the Import button on the commands bar  .  This will open the Import dialog.  
 19. Choose ‘Hawaii.pdf’ from your lab directory.  Click Open.  This will open the PDF Import Settings dialog.
 20. Click OK to import the PDF as a new layer in the Inscape document.  You will see Hawaii displayed on the Inkscape document.
-	+ If the Lower 48 is obscured by a white background box in the Hawaii layer, remove the Hawaii layer, and re-visit steps 12-15 in Task 1 to re-export the Hawaii layer with a transparent background.
+	+ If the Lower 48 is obscured by a white background box in the Hawaii layer, remove the Hawaii layer, and re-visit steps in Task 1 to re-export the Hawaii layer with a transparent background.
 21. Hold down the Control key on your keyboard.  Use the Select tool  ![Select tool](figures/Select_tool.png "Select tool")  and grab the scale arrows of a corner of the Hawaii layer (See figure below) and drag scale Hawaii down to a smaller size. By holding down the Control key, it maintains the aspect ratio of what you are scaling.  This means that Hawaii will maintain its correct shape when being scaled.
 
 ![Scale Arrows](figures/Scale_Arrows.png "Scale Arrows")
@@ -206,11 +208,11 @@ With the Lower 48 imported, we will now import Hawaii and Alaska in to Inkscape.
 
 ![Scaled and Moved Hawaii](figures/Scaled_and_Moved_Hawaii.png "Scaled and Moved Hawaii")
 
-23. Repeat steps 14-22 in this Task to import Alaska to its own layer and place it left of Hawaii.  Your document should now look similar to the figure below.
+23. Repeat steps in this Task to import Alaska to its own layer and place it left of Hawaii.  Your document should now look similar to the figure below.
 
 ![Roughed In Map Design](figures/Roughed-In_Map_Design.png "Roughed In Map Design")
 
-24. Take a moment to save your work in your lab directory.  Click File->Save and name your document ‘Colorful Map of the USA’ in the ‘Inscape SVG (*.svg) format.
+24. Take a moment to save your work in your lab directory.  Click File | Save and name your document ‘Colorful Map of the USA’ in the ‘Inscape SVG (*.svg) format.
 25. Click Save to save the document.
 
 ### Task 4 Designing the Final Map Layout
@@ -221,26 +223,26 @@ First, let’s adjust the line thickness for Alaska and Hawaii.
 
 1. In Inkscape, select the Alaska layer so that it is the current layer.
 2. Use the Select tool and select Alaska in the Composition View.
-3. In the Command Bar, click Edit object’s colors… button ![Edit paths by node button](figures/Edit_paths_by_nodes_button.png "Edit paths by node button")  to open the Fill and Stroke Panel.
+3. In the Command Bar, click Edit object’s colors… button ![Edit objects color button](figures/Edit_objects_color.png "Edit objects color button")  to open the Fill and Stroke Panel. Alternatively, click Object | Fill and Stroke from the menu bar.
 4. Click the Stroke style tab in the Fill and Stroke Panel.
 5. Set the Width to 1.417 which is the same width as the state boundary lines in the Lower 48.  
-	+ I found the width of a state boundary by clicking the Edit paths by nodes button   on the Toolbox then selecting a state.  I then inspected the width in the Fill and Stroke Panel under the Stroke style tab. 
-6.\ Repeat Steps 1-5 for Hawaii.
+	+ I found the width of a state boundary by clicking the Edit paths by nodes button ![Edit paths by node button](figures/Edit_paths_by_nodes_button.png "Edit paths by node button") on the Toolbox then selecting a state.  I then inspected the width in the Fill and Stroke Panel under the Stroke style tab. 
+6. Repeat the steps to set the line width to 1.417 for Hawaii.
 
-Next, let’s change the placement of Florida, Louisiana, Connecticut, Rhode Island, New Hampshire, Vermont labels so that they are more centrally placed and/or easier to read.  To accomplish this, we will need to ungroup the Lower 48 so we can manipulate the individual label objects.
+Next, let’s change the placement of labels for Florida, Louisiana, Connecticut, Rhode Island, New Hampshire, Vermont so that they are more centrally placed and/or easier to read.  To accomplish this, we will need to ungroup the Lower 48 so we can manipulate the individual label objects.
 
 7. Use the Select tool and select the Lower48 in the Composition View.
-8. In the Commands Bar, click Ungroup selected objects button  ![Ungroup selected objects](figures/Ungroup_selected_objects.png "Ungroup selected objects") .  This will separate the object in to multiple smaller objects.  When this happens, you will see selection boxes appear around the labels and label ovals (shown in figure below).  If you do not see the selection boxes around the labels, click the Ungroup selected objects button again.
+8. In the Commands Bar, click Ungroup selected objects button  ![Ungroup selected objects](figures/Ungroup_selected_objects.png "Ungroup selected objects") .  This will separate the object in to multiple smaller objects.  When this happens, you will see selection boxes appear around the labels and label ovals (shown in figure below).  If you do not see the selection boxes around the labels, keep clicking the Ungroup selected objects button.
 
 ![Ungrouped Labels and Label Ovals](figures/Ungrouped_Labels_and_Label_Ovals.png "Ungrouped Labels and Label Ovals")
 
 9. Press the Escape key on your keyboard to de-select everything.  Had you tried to select a label with everything selected, it would not allow you to select it.  Instead, after you ungroup, you will need to de-select everything, then select the ungrouped object of interest.
-10. Click the Zoom in or out tool ![Zoom in or out tool](figures/Zoom_in_or_out_tool.png "Zoom in or out tool") in the toolbox, then zoom in close to the north-eastern states.  Some of the labels are overlapping or too close to each other, we will separate them for readability.
+10. Click the Zoom in or out tool ![Zoom in or out tool](figures/Zoom_in_or_out_tool.png "Zoom in or out tool") in the toolbox, then zoom in close to the north-eastern states.  Some of the labels are overlapping or too close to each other so we will separate them for readability.
 11. Hold down the Shift key on your keyboard and use the Select tool to select the ‘VT’ label and the associated white ellipse. You may need to click a few times to get this to work.  You can also drag a box around the label and ellipse, but make sure you do not select other labels or states.  You will know you are successful when you see two selection boxes; one around VT and one around the ellipse (as shown in the figure below).
 
 ![Successful Selection of VT Label and Ellipse](figures/Successful_Selection_of_VT_Label_and_Ellipse.png "Successful Selection of VT Label and Ellipse")
 
-12. Press the Group selected objects button ![Zoom in or out tool](figures/Group_selected_objects.png "Zoom in or out tool")  on the commands bar to group the label and its background ellipse together.  This will make the label easier to select in the future, if needed.
+12. Press the Group selected objects button ![Group Selected Objects Button](figures/Group_selected_objects.png "Group Selected Objects Button") on the commands bar to group the label and its background ellipse together.  This will make the label easier to select in the future, if needed.
 13. Move the VT label slightly up (North) so it does not crowd the NH label as much.
 14. Select the NH label and ellipse, group it, and move it slightly down (South) so it does not crowd the VT label as much.
 15. Move the MA, RI, CT, MD, DE labels to more reasonable locations.  The figure below shows a reasonable arrangement.  
@@ -248,7 +250,7 @@ Next, let’s change the placement of Florida, Louisiana, Connecticut, Rhode Isl
 
 ![Reasonable Arrangement of Labels](figures/Reasonable_Arrangement_of_Labels.png "Reasonable Arrangement of Labels")
 
-16. Click Zoom to fit page in window button   ![: window button](/figures/window_button.png "[window button") on the commands bar to zoom to the entire map.  The ‘5’ key on your keyboard is a shortcut for this command.
+16. Click Zoom to fit page in window button ![Zoom to Fit Page in Window Button](figures/window_button.png "[Zoom to Fit Page in Window Button") on the commands bar to zoom to the entire map.  The ‘5’ key on your keyboard is a shortcut for this command.
 17. Move the LA and FL labels to locations that are more reasonable.  You may need to zoom in to select more accurately.  Feel free to move any other labels that you feel should be moved.
 
 Now let’s turn our attention to the labels for Alaska and Hawaii.  They are quite small!  They are that small because they were scaled down when we scaled down the imported PDF in Task 3.  Let’s put these labels to the appropriate size again.  I will show you two methods to accomplish this task.
@@ -258,7 +260,7 @@ Now let’s turn our attention to the labels for Alaska and Hawaii.  They are qu
 20. Click Zoom to fit page in window button.
 21. Zoom to Louisiana (LA).
 22. Select the LA label and ellipse.
-23. Click the Duplicate selected objects button ![Duplicate selected objects button](figures/Duplicate_selected_objects_button.png "Duplicate selected objects button")  on the commands bar.  This will create a duplicate copy of the label and ellipse and place it on top of the existing label.
+23. Click the Duplicate selected objects button ![Duplicate Selected Objects Button](figures/Duplicate_selected_objects_button.png "Duplicate Selected Objects Button") on the commands bar.  This will create a duplicate copy of the label and ellipse and place it on top of the existing label.
 24. With the label still selected, zoom to the entire page, then move the duplicated label over Alaska.  Oh no!  The label disappeared behind Alaska!  The reason this happened is because the duplicated object is still on the Lower 48 layer, which is placed below the Alaska layer (reference the Layers Panel for draw order).  We will need to move the duplicated label up to the Alaska layer so it will display correctly.
 25. With the label selected*, hold Shift key and press Page Up key two times. Notice that every time you press Page Up, the active layer in the Status bar changes to the layer that the object is now placed in.  On the fifth press, you should reach Alaska as the active layer.  If you go too far, hold Shift key and press Page Down key.  You can also move the layers above and below using the Layer menu in the Menu bar.  
 	+ If you unselected the label and it is hidden behind Alaska, turn off the Alaska layer visibility in the Layers panel, move the label to the Alaska layer (it should disappear when this happens), then turn the Alaska layer back on.
@@ -266,22 +268,22 @@ Now let’s turn our attention to the labels for Alaska and Hawaii.  They are qu
 27. With Alaska still the active layer, click Create and edit text objects tool ![Create and edit text objects](figures/Create_and_edit_text_objects.png "Create and edit text objects")  on the toolbox, then click above the LA label.  This will create a new text object.
 28. Type LA.  LA will appear on the composition.  
 29. Use the Select tool to select the newly created text. 
-30. Click Text->Text and Font on the menu bar to open the Text and Font dialog.  
+30. Click Text | Text and Font on the menu bar to open the Text and Font dialog.  
 31. Select Arial for the font family.  Arial is the font we used to label the states in QGIS (I went back and checked, you can too!), so we are matching the font in Inkscape.
 32. Click Apply then Close to set the font to Arial.
 33. Ungroup the LA label from the ellipse.
-34. Select both the LA label and the LA text you created in step 27.
+34. Select both the LA label and the LA text you created using the text tool.
 35. Open the Align and Distribute panel by clicking the Align and distribute objects button  ![Align and Distribute objects](figures/Align_and_distribute_objects.png "Align and Distribute objects")  on the commands bar.
-36. Set the following options and click the following buttons on the Align and Distribute Panel:  
-	+ Relative to: Selection  
-	+ Click Align bottom edges button ![Align bottom edges button](figures/Align_bottom_edges_button.png "Align bottom edges button")   
-	+ Click Align left edges button ![Align left edges button](figures/Align_left_edges_button.png "Align left edges button")   
+36. Set the following options and click the following buttons on the Align and Distribute Panel:
+	+ Relative to: Last Selected
+	+ Click Align bottom edges button ![Align bottom edges button](figures/Align_bottom_edges_button.png "Align bottom edges button")
+	+ Click Align left edges button ![Align left edges button](figures/Align_left_edges_button.png "Align left edges button")
 37. With the origins of the labels together (shown in the figure below), you will now resize the text label (the larger one) to make it the same size as the path label (smaller one). Press escape key on your keyboard de-select everything.
 
  ![Text and Paths Labels Sharing the Same Origin](figures/Text_and_Paths_Labels_Sharing_the_Same_Origin.png "Text and Paths Labels Sharing the Same Origin")
 
 38. Select the LA text (larger one), hold down the Control key on your keyboard, and use the top-right resize arrows to make the larger text the same size as the smaller text.  Holding down the Control key maintains the aspect ratio of the resizing object.
-39. Re-open the Text and Font dialog (Text->Text and Font) and notice that the Font size is right around 18. Now we know which font size we are working with.
+39. Re-open the Text and Font dialog (Text | Text and Font) and notice that the Font size is right around 18. Now we know which font size we are working with.
 40. Set the Font size to 18.  
 41. Click the Text tab and then change the text to AK.
 42. Click Apply then Close to close the Text and Font dialog.
@@ -290,7 +292,7 @@ Now let’s turn our attention to the labels for Alaska and Hawaii.  They are qu
 45. Select both the text label and ellipse.
 46. Open the Align and Distribute panel by clicking the Align and distribute objects button  ![Align_and_distribute_objects_button](figures/Align_and_distribute_objects_button.png "Align_and_distribute_objects_button")  on the commands bar.
 47. Set the following options and click the following buttons on the Align and Distribute Panel (reference figure below):
-	+ Relative to: Selection
+	+ Relative to: Last selected
 	+ Click Center on vertical axis button ![Center on vertical axis button](figures/Center_on_vertical_axis_button.png "Center on vertical axis button")   
 	+ Click Center on horizontal axis button ![Center on horizontal axis button](figures/Center_on_horizontal_axis_button.png "Center on horizontal axis button") 
 
@@ -312,16 +314,16 @@ Now let’s try a second method to resize Hawaii’s label that is much quicker,
 51. Zoom in close to Hawaii.  Select then ungroup Hawaii multiple times until you see the selection boxes around the label and ellipse.
 52. Select and group the HI label and ellipse.
 53. Zoom to the IN (Indiana) label and select the label and ellipse.
-54. Click Edit->Copy from the menu bar.
+54. Click Edit | Copy from the menu bar.
 55. Zoom back to the HI label and select it.
-56. Click Edit->Paste Size->Paste Size from the menu bar.  Violà!  The Hawaii label is now the same size as the Indiana label.  Let’s discuss the downsides to doing this for a moment.  First, we chose IN label because it was roughly the same shape and character width as HI, therefore, when it is scaled, the font size should be very close and the label should not be stretched unusually.  Had we chosen CA, for instance, you would notice the stretching of the HI label.  The previous (long) method is a safer choice, however, this method will work in a pinch, but please check for consistency between like items (labels in this case) when you use this method.
+56. Click Edit | Paste Size | Paste Size from the menu bar.  Violà!  The Hawaii label is now the same size as the Indiana label.  Let’s discuss the downsides to doing this for a moment.  First, we chose IN label because it was roughly the same shape and character width as HI, therefore, when it is scaled, the font size should be very close and the label should not be stretched unusually.  Had we chosen CA, for instance, you would notice the stretching of the HI label.  The previous (long) method is a safer choice, however, this method will work in a pinch, but please check for consistency between like items (labels in this case) when you use this method.
 57.	Move the HI label to a reasonable location on Hawaii.  Your map should look similar to the figure below at this point.
 
 ![Our_Map_with_Fixed_Labels](figures/Our_Map_with_Fixed_Labels.png "Our_Map_with_Fixed_Labels")
 
 Now we will add a neatline around the entire map, and neatlines around Alaska and Hawaii.
 
-58. Create a new layer, name it ‘Neatlines’, and place it at the top of the list of layers. If the layer needs to be moved up or down, select the target layer, then use the raise or lower buttons in the Layers Panel (figure below).
+58. Create a new layer, name it ‘Neatlines’, and place it at the top of the list of layers. If the layer needs to be moved up or down, select the target layer, then use the raise or lower buttons in the Layers Panel (see figure below).
 
 ![Neatlines](figures/Neatlines.png "Neatlines")
 
@@ -335,15 +337,15 @@ Now we will add a neatline around the entire map, and neatlines around Alaska an
 63. On the Stroke style tab, set the Width to 0.75 mm.  This makes for a reasonably thick neatline.
 64. Now we will align the neatline to the center of the page.  Open the Align and Distribute panel and set the following:  
 	+ Relative to: Page  
-	+ Click Center on vertical axis button ![vertical axis button](figures/vertical_axis_button.png "vertical axis button")   
-	+ Click Center on horizontal axis button ![horizontal axis button](figures/horizontal_axis_button.png "horizontal axis button")   
+	+ Click Center on vertical axis button ![vertical axis button](figures/vertical_axis_button.png "vertical axis button").
+	+ Click Center on horizontal axis button ![horizontal axis button](figures/horizontal_axis_button.png "horizontal axis button").
 65. Resize your neatline to include all maps if the alignment made it overlap. Re-align as necessary.  Your map should look similar to the figure below.
 
 ![Our Map with the New Neatlines](figures/Our_Map_with_the_New_Neatline.png "Our Map with the New Neatlines")
 
 We will next add a neatline around Alaska and Hawaii.  Let’s start with Alaska.
 
-66. With the Neatlines layer set as the active layer, select the Create rectangles and squares tool ![Create rectangles or squares](figures/Create_rectangles_or_squares.png "Create rectangles or squares")  on the toolbox, and click and drag a box around Alaska giving the state a little breathing room. Let’s change the fill and line properties.
+66. With the Neatlines layer set as the active layer, select the Create rectangles and squares tool ![Create rectangles or squares](figures/Create_rectangles_or_squares.png "Create rectangles or squares") on the toolbox, and click and drag a box around Alaska giving the state a little breathing room. Let’s change the fill and line properties.
 67. With the box still selected, click Edit objects’ color, gradients, stroke width… ![Edit objects](figures/Edit_objects.png "Edit objects")  button on the commands bar.  This will open the Fill and Stroke panel.
 68. Set the following Fill and Stroke options:  
 	+ Fill tab  
@@ -354,9 +356,9 @@ We will next add a neatline around Alaska and Hawaii.  Let’s start with Alaska
 	+ Stroke style tab  
 		+ Width: 0.5 mm  
 			+ To give the appearance of a heiarchy in the map, we are making the interior neatlines .25mm thinner than the map’s neatline.  
-69. Select both the Alaska neatline and the map neatline.
+69. Select the Alaska neatline *then select* the map neatline.
 70. Open the Align and Distribute panel and do the following:
-	+ Relative to: Selection
+	+ Relative to: Last selected
 	+ Click Align bottom edges button  
 	+ Click Align left edges button  
 71. Move the Alaska state and label if it no longer is inside the neatline, or, make the neatline larger.  It may be useful to re-group the Alaska state and label so you can move it as one unit.  Your Alaska neatline should look similar to the figure below.
@@ -368,7 +370,7 @@ Now we will create a neatline around Hawaii.  However, we won’t create a borin
 72. Click Draw Bezier curves and straight lines tool ![Bezier Curve Tool](figures/Draw_Bezier_curves_and_straight_lines.png "Bezier Curve Tool") in the toolbox.
 73. Click once to the right of Hawaii and on the map neatline.
 74. Hold down Control key on your keyboard and move your mouse.  Notice that the line rotates in 15° increments.  This allows for nice, straight and diagonal line drawing.
-75. Using the control key and mouse clicks, draw the neatline shown in the figure below.
+75. Using the control key and mouse clicks, draw the neatline shown in the figure below. Double-click to complete the line drawing.
 
 ![Hawaii Neatline with 45 Diagonal Line](figures/Hawaii_Neatline_with_45_Diagonal_Line.png "Hawaii Neatline with 45 Diagonal Line")
 
@@ -378,8 +380,9 @@ You can see which angle you are snapping to in the Status bar (see figure below)
 
 76. Using the Fill and Stroke panel, set the Hawaii neatline’s properties to match Alaska’s neatline properties. Reference step 68 above for a reminder.
 77. Use the Align and Distribute panel to align Hawaii and the map’s neatline to each other’s bottom edges.
-78. Zoom in close to where Alaska and Hawaii’s neatlines touch.  
+78. Zoom in close to where Alaska and Hawaii’s neatlines touch.
 79. Move the Hawaii neatline left or right to have it intersect with Alaska’s neatline.
+	+ Alternatively, you can select the Hawaii neatline first then select the Alaska neatline, then, in the Align and Distribute panel, click Align left edges of objects to the right edge of the anchor button ![Align Left Edges of Objects to the Right Edge of the Anchor Button](figures/Align_right_edge_to_left_anchor.png "Align Left Edges of Objects to the Right Edge of the Anchor Button").
 80. Open the Layers panel and lock the Neatlines layer.  This will prevent us from accidentally selecting the neatlines as we place the title and metadata.
 
 Now we will add the title and metadata.
@@ -387,9 +390,10 @@ Now we will add the title and metadata.
 81. Create a new layer named ‘Title and Metadata’ and place it at the top of the Layers list.  
 82. Make sure ‘Title and Metadata’ is the active layer, then click Create and edit text objects button ![Create and edit text objects](figures/Create_and_edit_text_objects.png "Create and edit text objects") in the toolbox.  
 83. Click above the Lower 48 and enter the following title: ‘United States of America’.
-84. Select the title text then click Text->Text and Font from the menu bar.  This will open the Text and Font dialog.
+84. Select the title text then click Text | Text and Font from the menu bar.  This will open the Text and Font dialog.
 85. Set the following Text and Font properties:
 	+ Font family: Arial
+	+ Font size: 32
 
 The title should be centered on the page, so, instead of trying to figure out where center is ourselves, we will use the Align and Distribute Panel to do it for us.  
 
@@ -406,7 +410,7 @@ The title should be centered on the page, so, instead of trying to figure out wh
 	+ Map Author: <your name>
 Made with Natural Earth.  Free data at naturalearthdata.com.
 		+ It is not necessary to cite Natural Earth, however, I feel it is important to give credit for their amazing product.  For more information, read their Terms of Use.
-90. Select the metadata text then click Text->Text and Font from the menu bar.  This will open the Text and Font dialog.
+90. Select the metadata text then click Text | Text and Font from the menu bar.  This will open the Text and Font dialog.
 91. Set the following Text and Font properties:
 	+ Font family: Arial
 	+ Font size: 10
@@ -421,7 +425,7 @@ That is it!  We are done designing the map!  Your map should now look like the f
 
 The last thing we need to do is export this map.
 
-95. Click File->Save a Copy… from the menu bar.
+95. Click File | Save a Copy… from the menu bar.
 96. Save the map as a Portable Document Format (*.pdf) in your lab directory.  Name the map whatever you want, you made it, after all!  Click Save.  Another dialog will open.
 97. Accept the defaults for the Portable Document Format dialog.  Click OK to save the PDF.
 
@@ -432,8 +436,8 @@ In this lab, you have learned how to use Inkscape to import PDFs, modify objects
 ### 4 Discussion Questions
 
 1. Submit your exported colorful map of the USA for grading.
-2. In Inkscape, click File->Document Properties->Snap tab.  Set the Snap to objects Snap distance to 50 then close the Document Properties.  Zoom in close to a neatline.  Click the Draw Bezier curves and straight lines tool.  Click just outstide the neatline.  Notice that the path snapped to the center of the path!  Now, explore the Snap Controls bar and discuss what snapping is, and identify two places in this lab where snapping would have come in useful.
-3. Let’s add a little more pizazz to our map. Inkscape has a huge library of Filters that can do interesting things to our map.  Your challenge is to apply a drop shadow to the map using the filter located at: Filters->Shadows and Glows->Drop Shadow…  Add a drop shadow the the Lower 48, Alaska, and Hawaii.  It may be useful to group everything on each of the three layers first, then apply the drop shadow to the selected group.  To easily select everything in a layer, lock all other layers, then drag a large selection box around the objects to select. Export a PDF and submit the map with a  drop shadow for grading.  Your map may look similar to the one below.
+2. In Inkscape, click File | Document Properties | Snap tab.  Set the Snap to objects Snap distance to 50 then close the Document Properties.  Zoom in close to a neatline.  Click the Draw Bezier curves and straight lines tool.  Click just outstide the neatline.  Notice that the path snapped to the center of the path!  Now, explore the Snap Controls bar and discuss what snapping is, and identify two places in this lab where snapping would have come in useful.
+3. Let’s add a little more pizazz to our map. Inkscape has a huge library of Filters that can do interesting things to our map.  Your challenge is to apply a drop shadow to the map using the filter located at: Filters | Shadows and Glows | Drop Shadow…  Add a drop shadow the the Lower 48, Alaska, and Hawaii.  It may be useful to group everything on each of the three layers first, then apply the drop shadow to the selected group.  To easily select everything in a layer, lock all other layers, then drag a large selection box around the objects to select. Export a PDF and submit the map with a  drop shadow for grading.  Your map may look similar to the one below.
 
 ### 5 Challenge: Complete Challenge from Lab 1 (optional)
 
