@@ -28,7 +28,7 @@ In this lab, the student will complete the map design discussed and started in L
 
 This lab will focus primarily on arranging map elements, creating a legend, adding transparency effects, and properly aligning all map elements.The layout designed for this map may be partially re-used for a related choropleth map designed later in Lab 6.
 
-It is assumed that the student has completed labs 1,2, 3, and 4 and has a working knowledge of Inkscape and QGIS.  Because of this assumption, the student will be asked to complete tasks that were covered in the previous labs without being provided step-by-step instructions.  Tasks that have not been covered in previous labs will be covered in detail in this lab.
+It is assumed that the student has completed labs 1, 2, 3, and 4 and has a working knowledge of Inkscape and QGIS.  Because of this assumption, the student will be asked to complete tasks that were covered in the previous labs without being provided step-by-step instructions.  Tasks that have not been covered in previous labs will be covered in detail in this lab.
 
 Acknowledgement: The author would like to thank Mr. Olivert Garcia for allowing his Syria IDP and Refugee map design to be used as a teaching tool.
 
@@ -51,16 +51,16 @@ The first task we will tackle is completing the design and layout of the proport
 *One thing to note before you begin.*  Depending on the scale and extent of the map as set in QGIS, you may have more, or less circles than what is displayed and instructed in this lab.  If so, either add and scale, or remove symbols as appropriate.
 
 1. There is no data for this lab.  You will use the ‘Syria Refugee and IDP Map.svg’ Inkscape file that you completed in lab 4.  Create a new lab directory to store the output of this lab.
-2. Open Inkscape 0.48.  Open ‘Syria Refugee and IDP Map.svg’ that you completed in lab 4.  The figure below displays the map design at the end of lab 4.
+2. Open Inkscape.  Open ‘Syria Refugee and IDP Map.svg’ that you completed in lab 4.  The figure below displays the map design at the end of lab 4.
 
 ![Syria Refugee and IDP Map](figures/Syria_Refugee_and_IDP_Map.png "Syria Refugee and IDP Map")
 
-3.	Open the Layers Panel and unlock the ‘Proportional Symbols’ layer.  It is best to keep all other layers locked so you don’t accidentally move or edit them.
-4.	Use the Select tool ![Select Tool](figures/Select_Tool.png "Select Tool") to select the Proportional Symbol layer on the map.  
-5.	Click the Ungroup selected groups button ![Ungroup button](figures/Ungroup_button.png "Ungroup button") multiple times until you see the selection boxes around the individual proportional symbols.
-6.	Select the proportional symbol representing Lebanon.  We will duplicate this symbol twice; once to use as Turkey’s symbol, and once to use as Iraq’s symbol.
-7.	Right-click on the selected proportional symbol then select Duplicate.  Do this a second time.
-8.	Drag one proportional symbol in to Turkey, and the second in to Iraq.  
+3. Open the Layers Panel and unlock the ‘Proportional Symbols’ layer.  It is best to keep all other layers locked so you don’t accidentally move or edit them.
+4. Use the Select tool ![Select Tool](figures/Select_Tool.png "Select Tool") to select the Proportional Symbol layer on the map.  
+5. Click the Ungroup selected groups button ![Ungroup button](figures/Ungroup_button.png "Ungroup button") multiple times until you see the selection boxes around the individual proportional symbols.
+6. Select the proportional symbol representing Lebanon.  We will duplicate this symbol twice; once to use as Turkey’s symbol, and once to use as Iraq’s symbol.
+7. Right-click on the selected proportional symbol then select Duplicate.  Do this a second time.
+8. Drag one proportional symbol in to Turkey, and the second in to Iraq.  
 
 Now that Turkey and Iraq have symbols, we need to set them to their correct relative sizes.  Recall that:
 
@@ -88,7 +88,7 @@ Notice that when you scaled the proportional symbol for Turkey and Iraq, their o
 14. Open the Fill and Stroke Panel by clicking ![Fill and Stroke Panel Button](figures/Fill_and_Stroke_Panel_Button.png "Fill and Stroke Panel Button") on the Commands Bar.
 15. Click ‘Stroke style’ tab.  Note that the thickness is 2.657 px.
 16. Select Turkey’s symbol.  In the Fill and Stroke Panel, set the thickness to 2.657 px.
-17. Repeat Step 16 for Iraq’s symbol.
+17. Repeat the above step for Iraq’s symbol.
 
 Great, now we can remove the duplicated Egypt symbol.
 
@@ -98,7 +98,7 @@ Great, now we can remove the duplicated Egypt symbol.
 Now that we have the correct number and size of proportional symbols, we will move and arrange them on the map for maximum impact and attractiveness.
 
 20. Use the Select tool to arrange the symbols similar to the figure below.  
-21. To make the purple symbol to sit underneath the red symbols, we will need to send it to the bottom of the draw order.  Select the purpose symbol, then click Object->Lower to Bottom from the File Menu.
+21. To make the purple symbol to sit underneath the red symbols, we will need to send it to the bottom of the draw order.  Select the purpose symbol, then click Object | Lower to Bottom from the File Menu.
 
 ![Placement and Relative Sizes of Proportional Symbols](figures/Placement_and_Relative_Sizes_of_Proportional_Symbols.png "Placement and Relative Sizes of Proportional Symbols")
 
@@ -125,25 +125,23 @@ In this task, you will add labels for both the countries and proportional symbol
 5. After typing text on the map, set the fill color to pure white by either:
 	+ Clicking the pure white on the palette at the bottom of Inkscape
 	+ Opening the Fill and Stroke Panel ![Fill and Stroke Panel Button](figures/Fill_and_Stroke_Panel_Button.png "Fill and Stroke Panel Button") and setting the Fill RGB color to 255,255,255.
-
-255,255,255.
 6. Label the following countries in all capital letters.  All labels should be white and 18 point font, except where noted.  Refer to the figure below for placement.
 
-+ Turkey
-+ Cyprus
-+ Lebanon
-+ West Bank -14 pt font size – Title Case
-+ Gaza Strip - 14 pt font size – Title Case
-+ Egypt
-+ Israel
-+ Jordan
-+ Saudi Arabia
-+ Iraq
-+ Syria
+	+ Turkey
+	+ Cyprus
+	+ Lebanon
+	+ West Bank -14 pt font size – Title Case
+	+ Gaza Strip - 14 pt font size – Title Case
+	+ Egypt
+	+ Israel
+	+ Jordan
+	+ Saudi Arabia
+	+ Iraq
+	+ Syria
 
 ![Country Label Placement](figures/Country_Label_Placement.png "Country Label Placement")
 
-7. Label the size proportional symbols with the following properties:
+7. Label the proportional symbols with the following properties (reference the figure below for placement example):
 	+ Font: Arial
 	+ Color: Black
 	+ Font Size: 32
@@ -207,7 +205,7 @@ To accomplish this design, we can either: a) copy and paste one red and one purp
 2. Unlock the ‘Proportional Symbols’ layer.
 3. Select a red symbol and click Edit->Copy from the file menu.
 4. Select ‘Legend’ as the active layer by either selecting ‘Layer’ from the layer combo box in the Status Bar, or, selecting the layer in the Layer Panel.
-5. Click Edit->Paste to paste the symbol on the ‘Legend’ layer.  Turn the layer visibility off and on to verify that the symbol is on the ‘Legend’ layer.  If it is not, select it, then hold Shift on your keyboard and press Page Up (or page down) until it is on the Legend layer.
+5. Click Edit | Paste to paste the symbol on the ‘Legend’ layer.  Turn the layer visibility off and on to verify that the symbol is on the ‘Legend’ layer.  If it is not, select it, then hold Shift on your keyboard and press Page Up (or page down) until it is on the Legend layer.
 6. Repeat steps 3-5 to copy the purple symbol.
 7. Set the width and height of both legend symbols to 40px.
 8. Set the Stroke Width of the legend symbol to 2.657so it matches the stroke width of the larger symbols.
@@ -357,7 +355,7 @@ Using the above figure as a guide, and using the Align and Distribute Panel, ali
 
 ### Task 5 Challenge: Add Refugee Camps to Map (optional)
 
-The United States Department of State Humanitarian Information Unit provides GIS data of Syria Refugee Camps in Turkey, Iraq, and Jordan.  The March 12th, 2014 data set is provided to you in C:\GST 104\Lab 5.  Using QGIS and the Refugee Camp data, create a new layer for the map created in this lab, and add it to the map, along with an associated legend and modified metadata statement.  The new layer should show the locations of all camps, and the camps should have different symbology based on the designation in the ‘DESIGNATION’ field of the data.  
+The United States Department of State Humanitarian Information Unit provides GIS data of Syria Refugee Camps in Turkey, Iraq, and Jordan.  The March 12th, 2014 data set is provided to you in Lab 5 Data folder.  Using QGIS and the Refugee Camp data, create a new layer for the map created in this lab, and add it to the map, along with an associated legend and modified metadata statement.  The new layer should show the locations of all camps, and the camps should have different symbology based on the designation in the ‘DESIGNATION’ field of the data.  
 
 The data was downloaded from <https://hiu.state.gov/data/data.aspx>
 
