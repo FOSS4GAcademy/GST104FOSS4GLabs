@@ -1,0 +1,13 @@
+## Lab 7 Data for Challenge Task Location
+
+The data for Lab 7 Challenge Task is too large to host on GitHub, therefore, 
+the data has been placed online for download as a zip file.
+
+https://onedrive.live.com/redir?resid=644D24A88CD9CEC!5373&authkey=!AO10cFwFoW3pnAo&ithint=file%2czip 
+
+The data file is approximately 335MB
+
+If you contribute new data, or modify the data, please either:
+
++ Email Richard.Smith@tamucc.edu with a link to the new data to host.
++ Host the data yourself in a reliable location for others to link to and update this document.
