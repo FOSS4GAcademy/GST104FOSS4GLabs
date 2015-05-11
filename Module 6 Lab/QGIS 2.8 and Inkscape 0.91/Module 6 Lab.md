@@ -28,7 +28,7 @@ In this lab, the student will construct a choropleth map showing worldwide refug
 
 This lab will focus primarily on data classification, symbolizing figures and grounds, creating a legend, and exporting the data to Inkscape. 
 
-It is assumed that the student has completed labs 1,2, 3, 4, and 5 and has a working knowledge of Inkscape and QGIS.  Because of this assumption, the student will be asked to complete tasks that were covered in the previous labs without being provided step-by-step instructions.  Tasks that have not been covered in previous labs will be covered in detail in this lab.
+It is assumed that the student has completed labs 1, 2, 3, 4, and 5 and has a working knowledge of Inkscape and QGIS.  Because of this assumption, the student will be asked to complete tasks that were covered in the previous labs without being provided step-by-step instructions.  Tasks that have not been covered in previous labs will be covered in detail in this lab.
 
 This lab includes the following tasks:
 
@@ -36,18 +36,18 @@ This lab includes the following tasks:
 + Task 2 – Classify and Symbolize Refugee Data
 + Task 3 – Symbolize IDP Data
 + Task 4 – Create Legend and Export Map
-+ Task 5 - Challenge: Design Map Layout using Inkscape
++ Task 5 - Design Map Layout using Inkscape
 
 ### 2 Objective: Utilize QGIS and Inkscape to Complete the Design of a Choropleth Map Showing Worldwide IDPs and Refugees
 
-To achieve a properly designed map, the features on the map must be easily distinguishable, attractive to the map reader, and stand out from the grounds (supporting background information/data).  In this lab, the student will learn how to utilize QGIS  and Inkscape to compose a well-designed choropleth map.  
+To achieve a properly designed map, the features on the map must be easily distinguishable, attractive to the map reader, and stand out from the grounds (supporting background information/data).  In this lab, the student will learn how to utilize QGIS  and Inkscape to compose a well-designed choropleth map.
 
 ### Task 1 Load and Symbolize Basemap Data
 
 The first task we will tackle is loading all of the basemap data and symbolizing it so we have a nice ground to contrast with our figures that we will add in Tasks 2 and 3.
 
 1. Open QGIS Desktop.
-3. In QGIS Desktop, add the following vector layers to the project by clicking Layer -> Add Vector Layer from the menu bar.  All of the layers have been projected in to EPSG:54012 - World_Eckert_IV, which is the projection we will use for this project.
+3. In QGIS Desktop, add the following vector layers to the project by clicking Layer | Add Layer | Add Vector Layer from the menu bar.  All of the layers have been projected in to EPSG:54012 - World_Eckert_IV, which is the projection we will use for this project.
 	+ ‘Ocean.shp’
 	+ ‘Graticules 15 Degrees.shp’
 4. Order the Ocean layer below the Graticules 15 Degrees layer.
@@ -55,15 +55,15 @@ The first task we will tackle is loading all of the basemap data and symbolizing
 	+ Symbol layer: Simple fill
 		+ Simple fill Color:
 			+ Hue: 195
-			+ Sat: 42
-			+ Val: 97
+			+ Sat: 15
+			+ Val: 40
 		+ Border style: No pen
 6. Set the following Style properties for the Graticules 15 Degrees layer:
 	+ Symbol layer: Simple fill
 		+ Simple line Color:
 			+ Hue: 60
-			+ Sat: 2
-			+ Val: 105
+			+ Sat: 0
+			+ Val: 40
 		+ Pen width: 0.25
 
 ### Task 2 Classify and Symbolize Refugee Data
@@ -73,7 +73,7 @@ In this task, you will add the dataset containing the refugee and IDP population
 1. Add ‘UNHCR Assisted IDPS and Refugees by Country.shp’ to the QGIS Project.  Order this layer at the top of the Layers list.  This dataset contains two attributes of interest:
 	+ Refugees: The number of refugees living within the country
 	+ IDPs: The number of internally displaced persons (IDPs) living within the country.
-2. Let’s take a look at the descriptive statistics of the Refugee field to get a feeling for its form.  Click Vector->Analysis Tools->Basic statistics to open the Basic statistics dialog.  We will use this dialog to run basic descriptive statistics on the Refugee field.
+2. Let’s take a look at the descriptive statistics of the Refugee field to get a feeling for its form.  Click Vector | Analysis Tools | Basic statistics to open the Basic statistics dialog.  We will use this dialog to run basic descriptive statistics on the Refugee field.
 3. Set the following options in the Basic statistics dialog then Click OK to see the results shown in the figure below:
 	+ Input Vector Layer: ‘UNHCR Assisted IDPS and Refugees by Country’
 	+ Target field: ‘Refugees’
@@ -113,10 +113,14 @@ Review the basic statistics again.  Note that they have changed quite significan
 
 ![Refugee Field Style Properties](figures/Refugee_Field_Style_Properties.png "Refugee Field Style Properties")
 
-13. Click OK to apply the style to the map.  Notice that there is quite a bit of white on the map that is a bit overpowering.  Additionally, Pakistan and the -99 countries are still missing.  Let’s re-introduce and symbolize the missing countries while removing the white class.
+13. Click OK to apply the style to the map.
+
+Notice that there is quite a bit of white on the map that is a bit overpowering.  Additionally, Pakistan and the -99 countries are still missing.  Let’s re-introduce and symbolize the missing countries while removing the white class.
+
 14. Clear the Filter for the UNHCR layer.
 15. Open the Style properties for the UNHCR… layer.
-16. Since the first two classes only range from 2 to 123,485, which is within the first standard deviation, let’s combine those two classes and re-use the lowest class for the -99 countries.  Double-click on the values for the lowest class (2.0000 – 30083.0000) to edit the class bounds.  
+16. Uncheck 'Link class boundaries'. This will allow us to introduce gaps between classes.
+16. Since the first two classes only range from 2 to 123,485, which is within the first standard deviation, let’s combine those two classes and re-use the lowest class for the -99 countries.  Double-click on the values for the lowest class (2.00 – 30083.00) to edit the class bounds.  
 17. Set the Lower value and Upper value both to -99 then click OK to set the new class bounds.  See figure below for reference.
 
 ![Editing Class Bounds of Lowest Class](figures/Editing_Class_Bounds_of_Lowest_Class.png "Editing Class Bounds of Lowest Class")
@@ -128,8 +132,8 @@ Review the basic statistics again.  Note that they have changed quite significan
 		+ Simple fill:
 			+ Fill Color:
 				+ Hue: 223
-				+ Sat: 28
-				+ Val: 163
+				+ Sat: 10
+				+ Val: 65
 			+ Border width: 0.3
 21. Click ‘Add class’ to add a new class to the style.  We will set this class to represent Pakistan.
 22. Change the Lower value and Upper value of the class both to 1621525.
@@ -138,8 +142,8 @@ Review the basic statistics again.  Note that they have changed quite significan
 		+ Simple fill:
 			+ Fill Color:
 				+ Hue: 4
-				+ Sat: 255
-				+ Val: 100
+				+ Sat: 100
+				+ Val: 40
 			+ Border width: 0.3
 24. Click OK to apply the style to the map.  Your map should now resemble figure below.
 
@@ -179,17 +183,17 @@ With the refugees mapped, now we will map the countries with IDPs numbering over
 8. Set the Lower value to 250000 and the Upper value to 4744096 (highest IDP value).
 9. Change the class’ label to ‘More than 250,000 IDPs’
 10. Double-click on the symbol for the class to open the Symbol selector. 
-	+ Set the following Symbol properties (shown in two figures below):
-		+ Simple fill:
-			+ Symbol layer type: Line pattern fill
-			+ Distance: 2.0
-			+ Line:
-				+ Simple line:
-					+ Color:
-						+ Hue: 0
-						+ Sat: 0
-						+ Val: 0
-					+ Pen width: 0.25
+11. Set the following Symbol properties (shown in two figures below):
+	+ Simple fill:
+		+ Symbol layer type: Line pattern fill
+		+ Distance: 2.0
+		+ Line:
+			+ Simple line:
+				+ Color:
+					+ Hue: 0
+					+ Sat: 0
+					+ Val: 0
+				+ Pen width: 0.25
 
 ![IDP Symbol Properties](figures/IDP_Symbol_Properties_1.png "IDP Symbol Properties")
 ![IDP Symbol Properties](figures/IDP_Symbol_Properties_2.png "IDP Symbol Properties")
@@ -200,11 +204,11 @@ With all of the symbology now set, your map should look like the figure below.
 
 11. Save your QGIS Project as ‘Worldwide Refugee and IDP Population.qgs’.
 
-### Task 4		Create Legend and Export Map
+### Task 4 Create Legend and Export Map
 
 With the map design complete, let’s create a legend then export the map in to Inkscape.
 
-1. Click Project->New Print Composer and name it ‘Worldwide IDPs and Refugees’.
+1. Click Project | New Print Composer and name it ‘Worldwide IDPs and Refugees’.
 2. In the Composition Panel, under the Composition tab, set the following properties:
 	+ Paper and quality
 		+ Presets: ANSI A (Letter; 8.5x11 in)
@@ -232,11 +236,12 @@ Now we will add the legend.
 			+ Font color…
 				+ Hue: 0
 				+ Sat: 0
-				+ Val: 255
+				+ Val: 100
 		+ Symbol: 
 			+ Symbol width: 6.00 mm
 			+ Symbol height: 4.00 mm
 7. Now let’s remove the Ocean and Graticules from the legend.  In the Item properties tab, under Legend items group:
+	+ Uncheck 'Auto update'. This will allow us to change the contents of the legend.
 	+ Select the Graticules 15 Degrees entry then press the remove button ![Remove Button](figures/Remove_Button.png "Remove Button").  This will remove it from the legend.
 	+ Remove the Ocean entry from the legend.
 8. Let’s shorten the name for the Refugees layer and re-order the classes (the figure below shows the final configuration).
@@ -254,7 +259,7 @@ Now we will add the legend.
 
 10. Export the map as a PDF named ‘Worldwide Refugee and IDP Population.pdf’.
 
-### Task 5 Challenge: Design Map Layout using Inkscape (optional)
+### Task 5: Design Map Layout using Inkscape
 
 Using what you have learned in all of the labs up to this point, design a final map layout in Inkscape.  In your final map layout, use any page size and orientation that you feel would be appropriate for the map.  Be sure to add ancillary text and metadata to explain your map (feel free to do some research online to add interesting text/pictures/graphs (cite your sources!)).  You may want to start by modifying the layout you designed in Lab 5 so that both maps look like they are part of the same map series, but this is not a requirement.
 
