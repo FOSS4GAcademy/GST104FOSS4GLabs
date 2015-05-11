@@ -34,7 +34,7 @@ This lab includes the following tasks:
 
 ### 2 Objective: Utilize QGIS and Inkscape to Design and Label a Street Map of a Downtown Area
 
-Labeling a map is one of the most time consuming, frustrating, poorly automated, and important tasks that a cartographer undertakes.  Labels should provide the map reader with important attribute information to assist them in properly using the map.  Poorly designed, or missing, labels can destroy a map’s usefulness and undermine its authority.  In this lab, the student will learn how to utilize QGIS to label features using both basic and advanced QGIS labeling functions.  The final product will be a well-designed street map of a downtown area.  
+Labeling a map is one of the most time consuming, frustrating, poorly automated, and *important* tasks that a cartographer undertakes.  Labels should provide the map reader with important attribute information to assist them in properly using the map.  Poorly designed, or missing, labels can destroy a map’s usefulness and undermine its authority.  In this lab, the student will learn how to utilize QGIS to label features using both basic and advanced QGIS labeling functions.  The final product will be a well-designed street map of a downtown area.  
 
 ### Task 1 Label Features using Basic QGIS Labeling Functions
 
@@ -56,8 +56,8 @@ In this task, you will label roads, water, and parks using basic labeling techni
 		+ Size: 9.0 points
 		+ Color: 
 			+ Hue: 200
-			+ Sat: 255
-			+ Val: 255
+			+ Sat: 100
+			+ Val: 100
 	+ Placement:
 		+ Position: 
 			+ Above line: unchecked
@@ -81,11 +81,13 @@ Now that the Waterways are labeled, we will label the Natural areas, which all h
 		+ Size: 9.0 points
 		+ Color: 
 			+ Hue: 123
-			+ Sat: 189
-			+ Val: 69
+			+ Sat: 75
+			+ Val: 30
 	+ Placement: Around centroid
 	+ Centroid: visible polygon
-11. Click OK.  Find Armory Park just East of the center of the map (shown in the figure below).  Notice that the label runs over on to the adjacent building.  Again, not much we can do about this with basic labeling, so we will address the problem in Task 2.
+11. Click OK.
+
+Find Armory Park just East of the center of the map (shown in the figure below).  Notice that the label runs over on to the adjacent building.  Again, not much we can do about this with basic labeling, so we will address the problem in Task 2.
 
 ![Armory Park Label Placement](figures/Armory_Park_Label_Placement.png "Armory Park Label Placement")
 
@@ -115,14 +117,14 @@ Lastly, for this Task, let’s label the Roads layer.
 + (c) displays North Walk, a path, being labeled the same way a road is.  This path could/should have a different label style since it is a different type of road.
 + (d) displays Congress Street label running off of the map.  It should be moved or removed.  Note that South River label has moved off of the road and is in a better spot, however, it is crowding Congress Street and could still be placed in a better location.
 
-We can address (b) from Figure 5 by changing a labeling property.  Let’s do this now.
+We can address (b) from the figure above by changing a labeling property.  Let’s do this now.
 
 16. Open the Label Properties for the Roads layer.
 17. Set the following Label properties:
 	+ Rendering:
 		+ Feature options:
 			+ Merge connected lines to avoid duplicate labels: checked
-18. Click OK to see the results.  Notice that the amount of labels has been reduced and the multiple labels  of the same roads have, for the most part, been removed.  
+18. Click OK to see the results.  Notice that the amount of labels has been reduced and the multiple labels  of the same roads have, for the most part, been removed.
 19. Save the QGIS Project in your lab directory.
 
 ### Task 2 Improve Labels using Advanced QGIS Labeling Functions
@@ -181,14 +183,14 @@ Now with the proper fields created, let’s link them to the Data Defined Overri
 
 13. Open the Label properties for the Waterways layer.
 14. Choose the Placement tab.
-15. Click the Data Defined Override button next to Coordinate X->Field type…->Label_X.  You will know the Override has been set when the Override button changes to a yellow fill color ![Override Button Yellow](figures/Override_Button_Yellow.png "Override Button Yellow").
+15. Click the Data Defined Override button next to Coordinate X | Field type… | Label_X.  You will know the Override has been set when the Override button changes to a yellow fill color ![Override Button Yellow](figures/Override_Button_Yellow.png "Override Button Yellow").
 16. Set the Override for Coordinate Y and Rotation to the appropriate attribute fields.
 17. Click OK to set the overrides.
 
 Now we can do the final step, which is editing the label’s placement.
 
 18. Turn on the Labels toolbar if it is turned off.
-19. Start editing the Waterways layer by selecting the layer in the Layers list and choosing Layer->Toggle Editing.  When you toggle editing on, commands on the Labels toolbar (reference figure below) will be activated.  
+19. Start editing the Waterways layer by selecting the layer in the Layers list and choosing Layer | Toggle Editing.  When you toggle editing on, commands on the Labels toolbar (reference figure below) will be activated.  
 
 ![Activated Labels Toolbar](figures/Activated_Labels_Toolbar.png "Activated Labels Toolbar")
 
@@ -233,16 +235,19 @@ Now let’s turn our attention to the Natural layer, which represents the parks 
 		+ Type: Decimal number (real)
 		+ Width: 3
 		+ Precision: 1 (this allows for 1/10th of a point sizing)
-28. Open the Label properties for the Natural Layer.
-29. Select the Text tab.
+28. Save your edits and stop editing.
+29. Open the Label properties for the Natural Layer.
+30. Choose the Placement tab.
+31. Set the Data Defined Override for the Coordinate X and Coordinate Y to the fields you created.
+32. Select the Text tab.
 30. For the Font Size property, set the Data Defined Override to the LFontSize field you just created.
-31. Click OK.  The map should look the same, since the Natural layer was already labeled with size of 9.0 point labels.  
+31. Click OK.  The map should look the same, since the Natural layer was already labeled with size of 9.0 point labels.
 
 Before we change labels sizes of individual parks, let’s set up the text wrapping so we can change both the font size and label wrap at once later.
 
 32. Re-open the Label properties for the Natural layer.
 33. Select the Formatting tab.
-34. Set Wrap on character to ‘\n’ (without the quotes). The property should look like the figure below.  The ‘\n’ character sequence is a common way to denote that a carriage return and line feed should be inserted at that location in a string of text.  We will use that sequence to identify locations in label text where the label should continue on the next line.
+34. Set Wrap on character to ‘\\n’ (without the quotes). The property should look like the figure below.  The ‘\\n’ character sequence is a common way to denote that a carriage return and line feed should be inserted at that location in a string of text.  We will use that sequence to identify locations in label text where the label should continue on the next line.
 
 ![Wrap on Character Property for Natural Layer](figures/Wrap_on_Character_Property_for_Natural_Layer.png "Wrap on Character Property for Natural Layer")
 
@@ -251,9 +256,9 @@ With the font size and wrap on text properties set, let’s change a park’s la
 35. Click OK to save and close the Natural layer’s properties if you haven’t already.
 36. Start editing on the Natural layer.
 37. On the Labels Toolbar, click the ‘Change Label’ button ![Change Label Button](figures/Change_Label_Button.png "Change Label Button") to toggle it on.
-38. Click the Lappin Park label.  This will open the Label properties dialog box.
+38. Click the Lappin Park label (you may need to zoom out to find the park).  This will open the Label properties dialog box.
 39. Chang the following label properties (shown changed in figure below):
-	+ Text: Lappin\nPark (no spaces anywhere in the text)
+	+ Text: Lappin\\nPark (no spaces anywhere in the text)
 	+ Font:
 		+ Size: 7.0
 
@@ -263,13 +268,13 @@ With the font size and wrap on text properties set, let’s change a park’s la
 41. Move the Lappin Park label so that it is completely inside the park.
 42. Using your judgment, modify the other park labels so that they are properly placed.
 
-With the waterways and parks labeled, all that is left to label are the roads.  To properly label the roads, we will use a Data Defined Override value for the position, rotation, visibility, font, font color, and font size.  Additionally, we will wrap the text on the ‘\n’ characters.  Let’s get started.
+With the waterways and parks labeled, all that is left to label are the roads.  To properly label the roads, we will use a Data Defined Override value for the position, rotation, visibility, font, font color, and font size.  Additionally, we will wrap the text on the ‘\\n’ characters.  Let’s get started.
 
 43. Using what you learned above, for the Roads layer, create attributes, and define Data Defined Overrides for the following:
 	+ X and Y position
 	+ Rotation value
 	+ Font Size
-44. Set the Wrap on text property to ‘\n’ (without the quotes).
+44. Set the Wrap on text property to ‘\\n’ (without the quotes).
 45. Create a new attribute with the following properties:
 	+ Name: LVisibility
 	+ Comment: Label’s visibility
@@ -298,7 +303,7 @@ The last labeling option we will set with a Data Defined Override is the font co
 
 ![Label Color Data Definition Description](figures/Label_Color_Data_Definition_Description.png "Label Color Data Definition Description")
 
-For the expected input, it was a list of three values (red, green, and blue), and each value ranging between the numbers 0 and 255.  The attribute field should be of type Text (string).  So, as an example, to specify the color white, we would store in the attribute this string:  255,255,255.   For black, the value would be: 0,0,0.  So, what we need to figure out is what is the maximum number of characters that we would need to hold in our new attribute field?  Well, since white uses the maximum value of 255 for red, green, and blue, we can count 11 characters (nine numbers, plus two commas).  So, with that sorted, let’s create the attribute field to hold the label color.
+For the expected input, it was a list of three values (red, green, and blue), and each value ranging between the numbers 0 and 255.  The attribute field should be of type Text (string).  So, as an example, to specify the color white, we would store in the attribute this string:  255,255,255. For black, the value would be: 0,0,0.  So, what we need to figure out is what is the maximum number of characters that we would need to hold in our new attribute field?  Well, since white uses the maximum value of 255 for red, green, and blue, we can count 11 characters (nine numbers, plus two commas).  So, with that sorted, let’s create the attribute field to hold the label color.
 
 55. Create a new attribute with the following properties:
 	+ Name: LabelColor
@@ -323,7 +328,7 @@ Let’s set the roads with the type attribute of footway, path, pedestrian, or t
 62. Click Select button to select 26 records.  
 63. Click Close button to dismiss the Select by Expression dialog box.
 64. With the attribute table still open, start editing, and open the field calculator and set the following values (also shown in figure below):
-	+ Only update selected features: checked
+	+ Only update 26 selected features: checked
 	+ Update existing field: checked
 	+ Existing field dropdown box: LabelColor
 	+ Expression: '75,67,64'  (include the single quotes)
@@ -335,7 +340,7 @@ Let’s set the roads with the type attribute of footway, path, pedestrian, or t
 
 ### Task 3 Complete Final Map Design
 
-With those Data Defined Overrides set for the Road layer, you should have the capability to modify the road labels so that they are properly positioned.  Once that is completed, the map is ready for the other map elements to be added (e.x. title, north arrow, scale bar, legend, etc…).  
+With those Data Defined Overrides set for the Road layer, you should have the capability to modify the road labels so that they are properly positioned.  Once that is completed, the map is ready for the other map elements to be added (e.x. title, north arrow, scale bar, legend, etc…).
 
 For this task, complete the labeling of the roads, design a map layout, and export the map as a PDF, and submit for grading.  You may do the layout design in QGIS, or, use Inkscape for the final layout.
 
@@ -356,6 +361,6 @@ In this lab, you learned how to label features in QGIS using both basic and adva
 
 ### 4 Discussion Questions
 
-1. Save maps from Tasks 3 and 4 as PDFs and submit them for grading.
+1. Save maps from Tasks 3 and 4 (if Task 4 was attempted) as PDFs and submit them for grading.
 2. Identify two other label properties that you feel would be useful to set a Data Defined Override.  Describe how you would create a Data Defined Override for the two properties, specifically listing the properties of the new fields.  Give an example of a value you would set for each of the properties.
 3. For the Roads layer, open the Style properties.  Notice that the Feature blending mode is set to ‘Lighten’.  Research then explain what the feature blending mode does.  How might you use the feature blending mode with labels?
