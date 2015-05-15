@@ -2,7 +2,7 @@
 ## Lab 1: Creating a Colorful Map of the United States of America
 ### Objective – Explore and utilize style properties in QGIS to design a colorful map of the United States of America
 
-Document Version: 4/28/2015
+Document Version: 5/14/2015
 
 **FOSS4G Lab Author:**
 Richard Smith, Ph.D., GISP
@@ -47,11 +47,11 @@ In this task, you will load and stylize the data that will be used to design a m
 2. Open QGIS Desktop.
 3. In QGIS Desktop, add the vector layer ‘USA States Area.shp’ to the project by clicking Layer | Add Layer | Add Vector Layer from the menu bar.
 
-As the Lower 48 are going to be the focus of this task, we will zoom in on them to fill the display.
+As the Lower 48 statesare going to be the focus of this task, we will zoom in on them to fill the display.
 
-4. Use the ‘Zoom In’ tool ![Zoom In Tool](figures/Zoom_In_Tool.png "Zoom In Tool") to drag a box around the Lower 48 to zoom in as close as possible without any part of a state exceeding the display area. Your display should look similar to.
+4. Use the ‘Zoom In’ tool ![Zoom In Tool](figures/Zoom_In_Tool.png "Zoom In Tool") to drag a box around the Lower 48 states to zoom in as close as possible without any part of a state exceeding the display area. Your display should look similar to.
 
-![Zoomed in on the Lower 48](figures/Zoomed_in-on_the_Lower_48.png "Zoomed in on the lower 48")
+![Zoomed in on the Lower 48 States](figures/Zoomed_in-on_the_Lower_48.png "Zoomed in on the lower 48 States")
 
 We now will set the style for each state. The general strategy will be to randomly assign each state a color from a color ramp that we like, set the line color and thickness, and finally change state colors where they are too similar to their neighbors.
 
@@ -83,7 +83,7 @@ Let’s get started with choosing a new line thickness for the state outlines.
 1. In the Layers panel, right-click ‘USA States Area’ then choose Properties.  Choose the Style tab to view the layer’s style properties.
 2. Click the Symbol ‘Change…’ button (shown in figure below) to view the Symbol selector dialog.
 
-![Symbol Change button](figures/Symbol_Change_button.png "Symbol Change button")
+![Symbol Change Button](figures/Symbol_Change_button.png "Symbol Change Button")
 
 3. In the Symbol layers box, choose Simple fill.  This will allow us to change the border color, style, and width.
 4. As the border color is black, and the border style is a solid line, only change the Border width to 0.4.  This will thicken the solid black border lines for each state.  
@@ -122,7 +122,7 @@ This task will walk you through the process of applying basic labels to the map.
 2. At the top of the Layer Properties dialog, check ‘Label this layer with’ and choose ‘postal’ from the field selector dropdown box.
 3. Click OK to see the labels on the map. You should see something like the figure below.
 
-![Default Labels for Lower 48](figures/Default_Labels_for_Lower_48.png "Default Labels for Lower 48")
+![Default Labels for Lower 48 States](figures/Default_Labels_for_Lower_48.png "Default Labels for Lower 48 States")
 
 Let’s consider the labels for a few moments.  First, the size may be too small to reliably read. Second, the labels are offset from center in some states, which looks awkward.  Third, in the smaller states along the east coast, the labels are difficult to read because they overlap with state boundary lines.  Lastly, some states may not be labeled (there may/may not be states missing labels).  Let us correct each of these issues.
 
@@ -150,9 +150,9 @@ Now we are getting somewhere.  The labels are now clearly visible size-wise.  Ho
 
 ![Placement Properties](figures/Placement_Properties.png "Placement Properties")
 
-Now the labels are really coming together.  There are a few labels that are still not placed optimally (e.x. LA, RI, NJ, DE, MD), however, the other states’ labels are placed nicely.  We will deal with the non-optimal label placement in Lab 3 when we work on the layout.
+Now the labels are really coming together.  There are a few labels that are still not placed optimally (e.x. LA, RI, NJ, DE, MD, and FL), however, the other states’ labels are placed nicely.  We will deal with the non-optimal label placement in Lab 3 when we work on the layout.
 
-Now let’s address the smaller states and the difficulty in reading their labels due to overlap with state boundaries.  Let’s apply a buffer to the labels to provide a nice white canvas for them to sit on.
+Now we will address the smaller states and the difficulty in reading their labels due to overlap with state boundaries.  Let’s apply a buffer to the labels to provide a nice white canvas for them to sit on.
 
 12. Re-open the Label Properties.
 13. Choose ‘Buffer’ from the properties list on the left-hand side of the Label properties tab.
@@ -166,7 +166,7 @@ Now let’s address the smaller states and the difficulty in reading their label
 
 ![Basic Labels with Buffer](figures/Basic_Labels_with_Buffer.png "Basic Labels with Buffer")
 
-While the labels are now easier to read, let’s do something a little non-traditional and put a different background behind the labels to make them easier to read.  Instead of a buffer that follows the strokes of the letters, let’s put semi-transparent white ellipsis behind the text.
+While the labels are now easier to read, we can do something a little non-traditional and put a different background behind the labels to make them easier to read.  Instead of a buffer that follows the strokes of the letters, let us put semi-transparent white ellipsis behind the text.
 
 16. Re-open the Label Properties.
 17. Choose ‘Buffer’ from the properties list on the left-hand side of the Label properties tab.
@@ -190,7 +190,7 @@ Your map should look similar to the figure below.
 
 Each state now has an easily readable label.  If you prefer the buffer to the ellipse, feel free to change it back, or, better yet, explore labeling options to find one that you prefer.  However, for the remainder of this and Lab 2 and Lab 3, the assumption is that you have ellipses behind the labels, so if you do not, you may need to adapt the lab instructions to fit your label choices.
 
-The fourth issue we identified with the labels earlier is that some states may not have labels.  Additionally, with the backgrounds added to the labels, Massachusetts now does not have a label.  First, let us discuss why some states may not have labels.  Let's use Florid and New York as examples. Because Florida and New York are composed of multiple polygons, stored as a single feature in the shapefile, the QGIS labeling engine may be attempting to label one of the very small polygons and finding that it is too small to label, therefore, it does not apply a label.  If you zoom in to New York or Florida, it will eventually place a label on the largest polygon.  Other states that are composed of multiple polygons are not afflicted by this, however, so there is some inconsistencies in either a) how QGIS decides how to label multi-part polygons, or b) the order in which the polygons are stored in the shapefile.  In either case, labels for those missing states will need to be added in manually; this will be handled in Lab 3.
+The fourth issue we identified with the labels earlier is that some states may not have labels.  Additionally, with the backgrounds added to the labels, Massachusetts now does not have a label.  First, let us discuss why some states may not have labels by using Florida and New York as examples. Because Florida and New York are composed of multiple polygons, stored as a single feature in the shapefile, the QGIS labeling engine may be attempting to label one of the very small polygons and finding that it is too small to label, therefore, it does not apply a label.  If you zoom in to New York or Florida, it will eventually place a label on the largest polygon.  Other states that are composed of multiple polygons are not afflicted by this, however, so there is some inconsistencies in either a) how QGIS decides how to label multi-part polygons, or b) the order in which the polygons are stored in the shapefile.  In either case, labels for those missing states will need to be added in manually; this will be handled in Lab 3.
 
 Moving on to Massachusetts, its label disappeared because the backgrounds of Connecticut and Rhode Island overlap, slightly, with the Massachusetts label.  QGIS, by default, does place features that conflict with other labels.  We will need to override this behavior to get Massachusetts labeled.
 
@@ -260,7 +260,7 @@ In this task, you will load and stylize the data that will be used to design a m
 6. Click OK to apply the style to the map.  Hawaii should look similar to the figure below.
 7. We are done designing the Hawaii map for now.  Save your QGIS Project as ‘Hawaii.qgs’ in your lab folder by clicking Project | Save.
 
-![Hawaii with Style Applied](figures/Hawaii_with_Style_Applied.png "Hawaii with Style Applied")
+![Hawaii With Style Applied](figures/Hawaii_with_Style_Applied.png "Hawaii With Style Applied")
 
 ### 3 Conclusion
 

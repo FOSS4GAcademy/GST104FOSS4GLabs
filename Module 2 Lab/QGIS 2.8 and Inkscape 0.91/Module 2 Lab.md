@@ -2,7 +2,7 @@
 ## Lab 2: Exploring Coordinate Systems and Map Projections
 ### Objective – Explore and Understand Coordinate Systems and Map Projections
 
-Document Version: 4/28/2015
+Document Version: 5/14/2015
 
 **FOSS4G Lab Author:**
 Richard Smith, Ph.D., GISP
@@ -39,13 +39,13 @@ This lab includes the following tasks:
 
 ### 2. Objective: Explore and Understand Map Projections and Coordinate Systems
 
-The map projection is a fundamental part of the mapping process, and provides the backbone, or framework, for the map.  It is important for the GIS Specialist to understand the qualities of the mapped region that are preserved by a given projection, and the qualities that will be distorted or skewed. Additionally, for cartographers, selection of an appropriate map projection is a crucial part of the map design process. This is because we are all used to seeing different parts of the world mapped using specific standard projections that make these areas “look right”. 
+The map projection is a fundamental part of the mapping process, and provides the backbone, or framework, for the map.  It is important for the GIS Specialist to understand the qualities of the mapped region that are preserved by a given projection, and the qualities that will be distorted or skewed. Additionally, for cartographers, selection of an appropriate map projection is a crucial part of the map design process. This is because we are all used to seeing different parts of the world mapped using specific standard projections that make these areas “look right.”
 
-The transformation of the ellipsoid shape of the earth onto a two-dimensional surface cannot be accomplished without some element of distortion, through shearing, tearing, or compression (as discussed in the text).  For mapping small Earth areas (large-scale mapping), projection is not a major issue, but as the scale becomes smaller, as in the mapping of continents or subcontinents, distortion becomes a significant factor.  Distortion of area, shape, distance, and direction become properties to consider.  It is impossible for one projection to maintain all of these properties simultaneously.  
+The transformation of the ellipsoid shape of the earth onto a two-dimensional surface cannot be accomplished without some element of distortion, through shearing, tearing, or compression.  For mapping small Earth areas (large-scale mapping), projection is not a major issue, but as the scale becomes smaller, as in the mapping of continents or subcontinents, distortion becomes a significant factor.  Distortion of area, shape, distance, and direction become properties to consider.  It is impossible for one projection to maintain all of these properties simultaneously.  
 
 Projections are classified according to the properties they preserve.  Equal-area (or equivalent) maps, for example, preserve area relationships, but tend to lose conformality (preservation of shape).  Conformal projections, on the other hand, maintain shape over small areas but produce areal distortion. In thematic mapping, it is important to maintain correct area properties. Therefore, shape is at times compromised through the choice of an equivalent projection.  For small-scale maps, in fact, conformality cannot be maintained over the entire area; rather, the projection may preserve shape best along a standard line, with shape distortion increasing with distance from the line.  Another property to consider is distance preservation (equidistance), which preserves distance measurements along great circle arcs.  Finally, direction preservation (azimuthality) maintains correct direction from one central point to all other points. 
 
-There are hundreds of possible projections from which to choose.  Some distort less in certain ways than others.  It is up to the map designer to select the projection that produces the least amount of unwanted distortion.  Many computer mapping software packages now allow the GIS specialist to easily switch between various projections, allowing the choice of the one most appropriate.  In the selection of a projection, several key elements must be considered:
+There are hundreds of possible projections from which to choose.  Some distort less in certain ways than others.  It is up to the map designer to select the projection that produces the least amount of unwanted distortion.  Many computer mapping software packages now allow the GIS specialist to easily switch between various projections, allowing the choice of the one most appropriate.  In the selection of a projection, several key elements must be considered:  
 
 + Projection properties - Are the properties of the projection suitable to the map’s purpose? Considering the properties of shape, distance, direction, and area, which ones must be preserved, and which can be sacrificed?  Or is compromise of all four the best choice?
 + Deformational patterns - Is the amount of deformation acceptable?
@@ -65,7 +65,7 @@ In Lab 2 you added data to QGIS Desktop. Here you will open an existing QGIS pro
 
 WorldView.qgs is a QGIS project file.  A project file contains information about a map such as: list of layers, coordinate system, symbols, labels, custom tools, map elements, and much more.
 
-An individual GIS layer in the Table of Contents is known as a theme. In the project file, there are two polygon themes, Circles and Land, a point theme, Cities, and a line theme, Graticule.  If these circles were displayed on a globe they would be perfect circles. Here you can begin to visualize the distortion in the projection by the distortion in the Circles theme. On this map, a projection has not been chosen in QGIS Desktop.  The software is using latitude and longitude measured in geodetic decimal degrees, which displays a simple rectangular coordinate system in which the length of one degree of longitude is consistently equal to one degree of latitude.  In QGIS Desktop, when a projection has not yet been selected, distance calculations remain true, since the software computes distance using the spherical coordinates of latitude and longitude along a great circle arc, just as if you were actually measuring at the Earth’s surface.  Although a projection has not yet been chosen by the user, the display is essentially a Plate Carrée projection.  On a projection that preserves shape, the polygons on the Circles theme appear as true circles.  In a Plate Carrée projection, linear scale, area, and shape are all distorted increasingly toward the poles as demonstrated with the Circles theme.  
+An individual GIS layer in the Layers Panel is known as a theme. In the project file, there are two polygon themes, Circles and Land, a point theme, Cities, and a line theme, Graticule.  If these circles were displayed on a globe they would be perfect circles. Here you can begin to visualize the distortion in the projection by the distortion in the Circles theme. On this map, a projection has not been chosen in QGIS.  The software is using latitude and longitude measured in geodetic decimal degrees, which displays a simple rectangular coordinate system in which the length of one degree of longitude is consistently equal to one degree of latitude.  In QGIS, when a projection has not yet been selected, distance calculations remain true, since the software computes distance using the spherical coordinates of latitude and longitude along a great circle arc, just as if you were actually measuring at the Earth’s surface.  Although a projection has not yet been chosen by the user, the display is essentially a Plate Carrée projection.  On a projection that preserves shape, the polygons on the Circles theme appear as true circles.  In a Plate Carrée projection, linear scale, area, and shape are all distorted increasingly toward the poles as demonstrated with the Circles theme.  
 
 The circles will be used in this exercise for illustrating the areal and shape distortion that occurs with various projections.  While this method does not actually quantify the distortion, as does Tissot’s indicatrix, it does visually demonstrate the skewing, tearing, and shearing that occurs with certain projections.
 
@@ -92,11 +92,11 @@ Now we will do some distance measurements on this map for later comparison to ma
 
 ![First Distance Measurement](figures/First_Measurement.png "First Distance Measurement")
 
-The measured distance is about 25,300 kilometers (your distance may vary slightly).  This is not the actual distance between Atlanta and Alice Springs.  Since on the fly CRS transformation is turned off, QGIS measures directly between Atlanta and Alice Springs (along your measure line) heading East from Atlanta.  What it should do is measure to Alice Springs by heading West from Atlanta instead of East as you defined since heading West is a shorter distance than heading East.  However, QGIS does not know that the “World is round,” so-to-speak, since on-the-fly transformation (OTF) is turned off.  With OTF turned on, it treats the coordinate system as a selected World-based coordinate system.  This view does not maintain spherical distance measurements, and distorts shape, direction and area.
+The measured distance is about 25,300 kilometers (your distance will vary slightly).  This is not the actual distance between Atlanta and Alice Springs.  Since on the fly CRS transformation is turned off, QGIS measures directly between Atlanta and Alice Springs (along your measure line) heading East from Atlanta.  What it should do is measure to Alice Springs by heading West from Atlanta instead of East as you defined since heading West is a shorter distance than heading East.  However, QGIS does not know that the “World is round,” so-to-speak, since on-the-fly transformation (OTF) is turned off.  With OTF turned on, it treats the coordinate system as a selected World-based coordinate system.  This view does not maintain spherical distance measurements, and distorts shape, direction and area.
 
-Let’s tell QGIS that we are, in fact, working with a World-based coordinate system and wish to measure on a round world.
+We need to tell QGIS that we are, in fact, working with a World-based coordinate system and wish to measure on a round world.
 
-10. From the menu bar, select Project -> Project Properties.
+10. From the menu bar, select Project | Project Properties.
 
 11. Click on the CRS tab.
 
@@ -112,9 +112,9 @@ Let’s tell QGIS that we are, in fact, working with a World-based coordinate sy
 
 ![Second Distance Measurement](figures/Second_Measurement.png "Second Distance Measurement")
 
-The measured distance is about 16,000 kilometers (your distance may vary slightly).  This is the actual  distance between Atlanta and Alice Springs.  This view maintains spherical distance measurements, but distorts shape, direction, and area.  
+The measured distance is about 16,000 kilometers (your distance will vary slightly).  This is the actual  distance between Atlanta and Alice Springs.  This view maintains spherical distance measurements, but distorts shape, direction, and area.  
 
-Let’s change the projection on this view to the Mercator projection.
+Next we will change the projection on this view to the Mercator projection.
 
 16. Open the Project Properties and select the CRS tab.
 
@@ -140,9 +140,9 @@ Keep the World View QGIS project open, it will be used in Task 2 as well.
 
 ### Task 2 - Exploring World Map Projections
 
-Let’s examine a map projection more suitable for mapping the entire world: the Eckert IV projection.  The Eckert II map projection is an equal-area pseudocylindrical map projection with straight parallel latitude lines and equally spaced meridians.
+We will examine a map projection more suitable for mapping the entire world: the Eckert IV projection.  The Eckert II map projection is an equal-area pseudocylindrical map projection with straight parallel latitude lines and equally spaced meridians.
 
-Let’s change the projection on this view to the Eckert IV projection.
+We will change the projection on this view to the Eckert IV projection.
 
 1. Open the Project Properties and select the CRS tab.
 
@@ -159,7 +159,7 @@ Let’s change the projection on this view to the Eckert IV projection.
 
 The Eckert IV is useful for world maps as it is equal-area and is pleasing to the eye.  Its standard parallels are at 40° 30’N and 40° 30’S.  This map is only distortion free where the standard parallels intersect the central meridian.
 
-Let’s see how the distance property fares.
+We will see how the distance property fares.
 
 4. Using the Measure tool, measure the distance from Atlanta to Alice Springs.
 
@@ -177,9 +177,9 @@ In this task, we will look at a map of the contiguous United States using a few 
 
 Country View.qgs is an unprojected map of the lower 48 states comprised of three themes: United States, LA & NYC, and Circle (centered on -97.50, 39.00).  You can see it does not look quite right given the default projection.  The circle shows some obvious skewing.  
 
-The distance property is more difficult to judge.  The known distance between Los Angeles and New York is approximately 3,962 kilometers.  Let’s see how the unprojected map controls distance distortion.
+The distance property is more difficult to judge.  The known distance between Los Angeles and New York is approximately 3,962 kilometers.  We can see how the unprojected map controls distance distortion.
 
-2. As before use the Measure Tool to measure the distance between Los Angeles and New York City in kilometers.
+2. As before, use the Measure Tool to measure the distance between Los Angeles and New York City in kilometers.
 
 If OTF is off, the distance in the unprojected view returns an answer 44.8 meters! If you receive this short distance, enable on-the-fly CRS transformation so the correct distance will be returned. 
 
@@ -209,7 +209,7 @@ Now we will project the data using the Eckert IV projection.  The Eckert IV did 
 
 ![Eckert IV Projection Applied to USA](figures/Eckert_IV_Projection_Applied_to_USA.png "Eckert IV Projection Applied to USA")
 
-There clearly is a great deal of distortion using this projection, most obviously the shearing.  Part of the problem lies in the fact that this projection is centered at 0 degrees longitude.  Let’s center the projection on the United States by creating a custom CRS based on the World\_Eckert_IV projection.
+There clearly is a great deal of distortion using this projection, most obviously the shearing.  Part of the problem lies in the fact that this projection is centered at 0 degrees longitude.  We can center the projection on the United States by creating a custom CRS based on the World\_Eckert_IV projection.
 
 11. Click Settings | Custom CRS… from the menu bar.  This will open the Custom Coordinate Reference System Definition dialog box.
 
@@ -230,13 +230,11 @@ We need to change the central meridian so that the projection is centered at -96
 *+proj=eck4 +lon\_0=-96.0 +x\_0=0 +y\_0=0 +datum=WGS84 +units=m +no\_defs*
 
 16. In the “Name” box, enter USA\_Eckert\_IV.  This will serve as a name of our new Custom CRS.
-
 17. Click OK.
 
-Our custom CRS is now added to QGIS Desktop for us to use.  Let’s choose our USA\_Eckert\_IV projection to see how it projects our map.
+Our custom CRS is now added to QGIS Desktop for us to use.  We can then choose our USA\_Eckert\_IV projection to see how it projects our map.
 
 18. Open the Project Properties, select the CRS tab.
-
 19. In the ‘Coordinate reference systems of the world’ list, scroll all the way to the bottom until you see ![Coordinate reference systems of the world](figures/Coordinate_reference_systems_of_the_world.png "Coordinate reference systems of the world")
 
 20. Expand the User Defined Coordinate Systems entry.
@@ -251,7 +249,7 @@ This is a distinct improvement in shape, but there is still some skewing.  The E
 
 The Lambert azimuthal, Albers equal-area, Bonne equal-area, and Lambert conformal conic projections are examples of suitable projections for mapping the entire U.S.  
 
-Because it has two standard parallels, the Albers equal-area projection is particularly good for larger countries with a significant east-west extent.  Let’s try Albers on our map.
+Because it has two standard parallels, the Albers equal-area projection is particularly good for larger countries with a significant east-west extent.  We can also try Albers on our map.
 
 23. Once again, open the Project Properties, select the CRS tab, and choose USA\_Contiguous\_Albers\_Equal\_Area\_Conic (EPSG: 102003) as the CRS.
 
@@ -261,7 +259,7 @@ Because it has two standard parallels, the Albers equal-area projection is parti
 
 The Albers conic projection has low scale distortion for an area the size of the U.S.  As the area being mapped decreases in size, distortion is less of an issue.  
 
-Let’s try another map projection to see what changes.
+We will try another map projection to see what changes.
 
 25. Open the Project Properties, select the CRS tab, and choose USA\_Contiguous\_Lambert\_Conformal\_Conic (EPSG: 102004) as the CRS.
 
@@ -287,7 +285,7 @@ Not too much changed between Albers and Lambert.  They are both similar map proj
 
 There are many ways that we can customize this CRS.  You can customize one of the projection selections so that it is centered on the area in question, in this case the United States, simply by redefining the particular cartographic settings, such as the central meridians, standard parallel(s), reference latitude, or false eastings and northings.  The choice of parameters varies depending on which projection is being used.  
 
-Let’s briefly define these terms and where they can be modified in the CRS Parameters.  Each term will be followed by the parameter in the CRS Parameters inside of parenthesis. 
+We need to briefly define these terms and where they can be modified in the CRS Parameters.  Each term will be followed by the parameter in the CRS Parameters inside of parenthesis. 
 
 *Note:* Proj.4 is another FOSS4G project used by QGIS, like OGR and GDAL. This project is for managing coordinate systems and projections. For a detailed user manual for the Proj.4 format used to specify the CRS Parameters in QGIS, visit
 
@@ -313,7 +311,7 @@ Closely related to the concept of the spheroid is the concept of the datum.  The
 
 + Coordinate Units (units).  Coordinate Units are used to define distances when setting x and y coordinates.  
 
-Now let’s see the effect of the 0.00 settings for the false easting and northing.  The x-origin is approximately -95.85 and the y-origin is approximately 37.16. 
+Now we can see the effect of the 0.00 settings for the false easting and northing.  The x-origin is approximately -95.85 and the y-origin is approximately 37.16. 
 
 You may have noticed that GIS layers (aka. “themes”) in the Layers panel have a box with an X in it. Layers can be turned off and on by unchecking and checking that box.  
 
@@ -334,7 +332,7 @@ The conic projections function quite well for mapping the larger states in the U
 
 The State Plane Coordinate System (SPCS) was developed to provide a simple rectangular coordinate system for large scale mapping use (i.e. small areas of the earth), such as surveying and engineering projects.  
 
-The SPCS is a series of separate coordinate systems, each covering either an entire state, or a portion of a state.  The SPCS is only used in the United States of America and, therefore, it is not appropriate to use SPCS for other countries or regions of the World.  SPCS is popular due to its high accuracy in large-scale mapping because of the relatively small size of each SPCS zone.  The SPCS is composed of 120 zones which follow county boundaries (except in Alaska) and often divides a state in to multiple zones. There are two main projections used with the SPCS. States with a north-south axis are mapped using the Transverse Mercator projection, and designate zones with between a range of ‘North’ and ‘South’ (e.x. Minnesota North).  States with an east-west axis are mapped with the Lambert Conformal projection and designate zones between a range of  ‘East’ and .West’ (e.x. New Mexico Central).
+The SPCS is a series of separate coordinate systems, each covering either an entire state, or a portion of a state.  The SPCS is only used in the United States of America and, therefore, it is not appropriate to use SPCS for other countries or regions of the World.  SPCS is popular due to its high accuracy in large-scale mapping because of the relatively small size of each SPCS zone.  The SPCS is composed of 120 zones which follow county boundaries (except in Alaska) and often divides a state in to multiple zones. There are two main projections used with the SPCS. States with a north-south axis are mapped using the Transverse Mercator projection, and designate zones with between a range of ‘North’ and ‘South’ (e.g. Minnesota North).  States with an east-west axis are mapped with the Lambert Conformal projection and designate zones between a range of  ‘East’ and .West’ (e.g. New Mexico Central).
 
 The original state plane system, developed in the 1930s, was based on the North American Datum of 1927, with coordinates measured in feet.  Today the state plane system is based on the North American Datum of 1983, and coordinates are in meters. 
 
@@ -370,7 +368,7 @@ So, let us project the Vermont shapefile in to the NAD27 / Vermont coordinate sy
 	
 	b. Click Browse
 
-	c. Find your Lab 3 "Data" Folder and save within that folder under the name *Vermont\_SPCS.shp*
+	c. Find your Lab 2 "Data" Folder and save within that folder under the name *Vermont\_SPCS.shp*
 
 	d. CRS: NAD27 / Vermont (EPSG:32045)  (click Select CRS button ![Select CRS Button](figures/Select_CRS_Button.png "Select CRS Button") to select CRS)
 
@@ -380,7 +378,7 @@ So, let us project the Vermont shapefile in to the NAD27 / Vermont coordinate sy
 
 5. Click OK.  QGIS will project the Vermont layer and add it to the map.  It will look like Figure below, but the color of the newly-added Vermont layer may differ. Remember that styling is random on layers added to QGIS.
 
-![Save vector layer as… Dialog Box](figures/Save_vector_layer_as_Dialog_Box1.png "Save vector layer as… Dialog Box")
+![Save Vector Layer As… Dialog Box](figures/Save_vector_layer_as_Dialog_Box1.png "Save Vector Layer As… Dialog Box")
 
 So far, Vermont looks the same, but you will find out why soon.  First, let’s make the Vermont\_SPCS layer look the same as the Vermont layer.
 
@@ -436,7 +434,7 @@ Note that the coordinate system of the shapefile is EPSG:4326, WGS 84; an unsuit
 	+ CRS: EPSG: 102003 - USA_Contiguous_Albers_Equal_Area_Conic
 	+ Check ‘Add saved file to map’
 
-![Save_vector_layer_as_Options](figures/Save_vector_layer_as_Options.png "Save_vector_layer_as_Options")
+![Save Vector Layer As Options](figures/Save_vector_layer_as_Options.png "Save Vector Layer As Options")
 
 7. Click OK to save the new shapefile.  The shapefile will be added as a new layer to the map.
 8. Remove the USA States Area layer with the WGS 84 CRS.
