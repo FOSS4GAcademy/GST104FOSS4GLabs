@@ -27,10 +27,11 @@ In this lab, the student will design and label a 1:2,500 scale downtown street m
 It is assumed that the student has completed labs 1 thru 6 and has a working knowledge of Inkscape and QGIS.  Because of this assumption, the student will be asked to complete tasks that were covered in the previous labs without being provided step-by-step instructions.  Tasks that have not been covered in previous labs will be covered in detail in this lab.
 
 This lab includes the following tasks:
-	+ Task 1 – Label Features using Basic QGIS Labeling Functions
-	+ Task 2 – Improve Labels using Advanced QGIS Labeling Functions
-	+ Task 3 – Complete Final Map Design
-	+ Task 4 - Challenge: Design and Label a 1:2,500 Scale Downtown Street Map
+
++ Task 1 – Label Features using Basic QGIS Labeling Functions
++ Task 2 – Improve Labels using Advanced QGIS Labeling Functions
++ Task 3 – Complete Final Map Design
++ Task 4 - Challenge: Design and Label a 1:2,500 Scale Downtown Street Map
 
 ### 2 Objective: Utilize QGIS and Inkscape to Design and Label a Street Map of a Downtown Area
 
@@ -129,7 +130,7 @@ We can address (b) from the figure above by changing a labeling property.  Let�
 
 ### Task 2 Improve Labels using Advanced QGIS Labeling Functions
 
-Labeling a map increases its usefulness to the map reader … if the labels are done well.  The Salem Downtown map labels are decent for as little work that we put in to labeling the features, however, the map labels are far from publishable quality. This task will teach you how to use Data Defined Overrides to improve placement, define different labeling properties for records of different types, and hide labels, among other things.
+Labeling a map increases its usefulness to the map reader if the labels are done well.  The Salem Downtown map labels are decent for as little work that we put in to labeling the features, however, the map labels are far from publishable quality. This task will teach you how to use Data Defined Overrides to improve placement, define different labeling properties for records of different types, and hide labels, among other things.
 
 First, let’s determine what a Data Defined Override is, and how to identify where they can be set.  A Data Defined Override sets a layer property to a value stored in an attribute field in the layer.  For example, a layer’s label font, style, size, size unit, and color can all be set by referencing attribute values for the layer that is being labeled.  Each text property that can be set with a Data Defined Override will have this button beside the property: ![Data Defined Override Button](figures/Data_Defined_Override_Button.png "Data Defined Override Button")  The figure below shows a small example of where the Data Defined Override buttons are located and which properties can be set with the Overrides.
 
